@@ -1,9 +1,23 @@
-<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 128 128">
-    <path d="M50.4 78.5a75.1 75.1 0 0 0-28.5 6.9l24.2-65.7c.7-2 1.9-3.2 3.4-3.2h29c1.5 0 2.7 1.2 3.4 3.2l24.2 65.7s-11.6-7-28.5-7L67 45.5c-.4-1.7-1.6-2.8-2.9-2.8-1.3 0-2.5 1.1-2.9 2.7L50.4 78.5Zm-1.1 28.2Zm-4.2-20.2c-2 6.6-.6 15.8 4.2 20.2a17.5 17.5 0 0 1 .2-.7 5.5 5.5 0 0 1 5.7-4.5c2.8.1 4.3 1.5 4.7 4.7.2 1.1.2 2.3.2 3.5v.4c0 2.7.7 5.2 2.2 7.4a13 13 0 0 0 5.7 4.9v-.3l-.2-.3c-1.8-5.6-.5-9.5 4.4-12.8l1.5-1a73 73 0 0 0 3.2-2.2 16 16 0 0 0 6.8-11.4c.3-2 .1-4-.6-6l-.8.6-1.6 1a37 37 0 0 1-22.4 2.7c-5-.7-9.7-2-13.2-6.2Z" />
-    <style>
-        path { fill: #000; }
-        @media (prefers-color-scheme: dark) {
-            path { fill: #FFF; }
-        }
-    </style>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 386 386" role="img" aria-labelledby="titulo">
+  <title id="titulo">Fixtris</title>
+  <desc>Un chip con una llave cruzada detrás; dentro, una pieza en T que cae para completar la línea de bloques.</desc>
+  <style>.f-chip{fill:#01394c}.s-chip{stroke:#01394c}.f-cuerpo{fill:#ebf8ff}.s-cuerpo{stroke:#ebf8ff}.f-pila1{fill:#0aa3d3}.s-pila1{stroke:#0aa3d3}.f-pila2{fill:#016a8b}.s-pila2{stroke:#016a8b}.pieza0{stop-color:#ffb020}.pieza1{stop-color:#d77500}.f-fantasma{fill:#f19100}.s-fantasma{stroke:#f19100}.llave0{stop-color:#06bbf1}.llave1{stop-color:#016a8b}.f-letras{fill:#00212f}.s-letras{stroke:#00212f}.f-puntos{fill:#0aa3d3}.s-puntos{stroke:#0aa3d3}.f-sub{fill:#016a8b}.s-sub{stroke:#016a8b}.f-circuito{fill:#0aa3d3}.s-circuito{stroke:#0aa3d3}@media (prefers-color-scheme:dark){.f-chip{fill:#ebf8ff}.s-chip{stroke:#ebf8ff}.f-cuerpo{fill:#00212f}.s-cuerpo{stroke:#00212f}.f-pila1{fill:#0aa3d3}.s-pila1{stroke:#0aa3d3}.f-pila2{fill:#016a8b}.s-pila2{stroke:#016a8b}.pieza0{stop-color:#ffc762}.pieza1{stop-color:#f19100}.f-fantasma{fill:#ffb020}.s-fantasma{stroke:#ffb020}.llave0{stop-color:#cfefff}.llave1{stop-color:#06bbf1}.f-letras{fill:#ffffff}.s-letras{stroke:#ffffff}.f-puntos{fill:#06bbf1}.s-puntos{stroke:#06bbf1}.f-sub{fill:#a0e1ff}.s-sub{stroke:#a0e1ff}.f-circuito{fill:#0aa3d3}.s-circuito{stroke:#0aa3d3}}</style>
+  <defs>
+    <linearGradient id="pieza" gradientUnits="userSpaceOnUse" x1="-40.5" y1="-91.5" x2="40.5" y2="-10.5"><stop offset="0" class="pieza0"/><stop offset="1" class="pieza1"/></linearGradient>
+    <linearGradient id="llave" gradientUnits="userSpaceOnUse" x1="-32.53" y1="-32.53" x2="32.53" y2="32.53"><stop offset="0" class="llave0"/><stop offset="1" class="llave1"/></linearGradient>
+    <mask id="recorte" maskUnits="userSpaceOnUse" x="-181" y="-181" width="362" height="362">
+      <rect x="-181" y="-181" width="362" height="362" fill="#fff"/>
+      <rect x="-125" y="-125" width="250" height="250" rx="37" fill="#000"/>
+      <g fill="#000" stroke="#000" stroke-width="18"><rect x="-64" y="-134" width="16" height="36" rx="4"/><rect x="-64" y="98" width="16" height="36" rx="4"/><rect x="-134" y="-64" width="36" height="16" rx="4"/><rect x="98" y="-64" width="36" height="16" rx="4"/><rect x="-8" y="-134" width="16" height="36" rx="4"/><rect x="-8" y="98" width="16" height="36" rx="4"/><rect x="-134" y="-8" width="36" height="16" rx="4"/><rect x="98" y="-8" width="36" height="16" rx="4"/><rect x="48" y="-134" width="16" height="36" rx="4"/><rect x="48" y="98" width="16" height="36" rx="4"/><rect x="-134" y="48" width="36" height="16" rx="4"/><rect x="98" y="48" width="36" height="16" rx="4"/></g>
+    </mask>
+  </defs>
+  <g transform="translate(193.0 193.0)">
+    <path d="M-118.74 97.52L92.99 -114.21A46 46 0 0 1 152.55 -176.6L113.84 -137.89L137.89 -113.84L176.6 -152.55A46 46 0 0 1 114.21 -92.99L-97.52 118.74A40 40 0 1 1 -118.74 97.52ZM-120.21 120.21L-115.03 139.53L-129.17 153.67L-148.49 148.49L-153.67 129.17L-139.53 115.03Z" fill-rule="evenodd" fill="url(#llave)" mask="url(#recorte)"/>
+    <g class="f-chip"><rect x="-64" y="-134" width="16" height="36" rx="4"/><rect x="-64" y="98" width="16" height="36" rx="4"/><rect x="-134" y="-64" width="36" height="16" rx="4"/><rect x="98" y="-64" width="36" height="16" rx="4"/><rect x="-8" y="-134" width="16" height="36" rx="4"/><rect x="-8" y="98" width="16" height="36" rx="4"/><rect x="-134" y="-8" width="36" height="16" rx="4"/><rect x="98" y="-8" width="36" height="16" rx="4"/><rect x="48" y="-134" width="16" height="36" rx="4"/><rect x="48" y="98" width="16" height="36" rx="4"/><rect x="-134" y="48" width="36" height="16" rx="4"/><rect x="98" y="48" width="36" height="16" rx="4"/></g>
+    <g class="s-chip" stroke-width="12"><rect x="-110.0" y="-110.0" width="220" height="220" rx="22" class="f-cuerpo"/></g>
+    <g class="f-pila2"><rect x="-83" y="53" width="30" height="30" rx="4"/><rect x="-49" y="53" width="30" height="30" rx="4"/><rect x="19" y="53" width="30" height="30" rx="4"/><rect x="53" y="53" width="30" height="30" rx="4"/></g>
+    <g class="f-pila1"><rect x="53" y="-15" width="30" height="30" rx="4"/><rect x="-83" y="19" width="30" height="30" rx="4"/><rect x="53" y="19" width="30" height="30" rx="4"/></g>
+    <g fill="none" class="s-fantasma" stroke-width="3"><rect x="-49" y="19" width="30" height="30" rx="4"/><rect x="-15" y="19" width="30" height="30" rx="4"/><rect x="19" y="19" width="30" height="30" rx="4"/><rect x="-15" y="53" width="30" height="30" rx="4"/></g>
+    <g fill="url(#pieza)"><rect x="-49" y="-83" width="30" height="30" rx="4"/><rect x="-15" y="-83" width="30" height="30" rx="4"/><rect x="19" y="-83" width="30" height="30" rx="4"/><rect x="-15" y="-49" width="30" height="30" rx="4"/></g>
+  </g>
 </svg>
