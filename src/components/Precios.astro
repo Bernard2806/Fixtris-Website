@@ -1,16 +1,68 @@
 ---
-import { formasDePago, compromiso } from '../data/site';
+import { formasDePago, compromiso, precios } from '../data/site';
+import { obtenerCotizacion, aPesos, formatearPesos } from '../lib/dolar';
 import Icono from './Icono.astro';
+
+const cotizacion = await obtenerCotizacion();
+const grupos = precios.map((g) => ({
+	...g,
+	items: g.items.map((p) => ({ ...p, pesos: formatearPesos(aPesos(p.usd, cotizacion)) })),
+}));
+const actualizado = cotizacion.fecha.toLocaleDateString('es-AR', {
+	timeZone: 'America/Argentina/Buenos_Aires',
+	day: '2-digit',
+	month: '2-digit',
+	year: 'numeric',
+});
 ---
 
 <section class="precios seccion tema-oscuro" id="precios" aria-labelledby="titulo-precios">
 	<div class="contenedor">
 		<h2 id="titulo-precios">Precios y formas de pago</h2>
 		<p class="intro">
-			Cada trabajo lleva su presupuesto. Junto con el precio te decimos cuál de estas formas de pago corresponde: depende
-			del trabajo y de los repuestos.
+			Estos son los precios de los trabajos más pedidos. Para el resto te pasamos un presupuesto, y junto con el precio te
+			decimos cuál de las formas de pago corresponde.
 		</p>
 
+		<div class="categorias">
+			{
+				grupos.map((g) => (
+					<details class="categoria" open>
+						<summary>
+							<span class="cabeza">
+								<h3>{g.categoria}</h3>
+								<span class="cantidad">
+									{g.items.length} {g.items.length === 1 ? 'precio' : 'precios'}
+								</span>
+							</span>
+							<span class="signo">
+								<Icono nombre="plus" />
+							</span>
+						</summary>
+						{g.aclaracion && <p class="aclaracion">{g.aclaracion}</p>}
+						<ul>
+							{g.items.map((p) => (
+								<li class="precio">
+									<span class="servicio">{p.servicio}</span>
+									<strong class="monto">{p.pesos}</strong>
+									{p.detalle && <p>{p.detalle}</p>}
+								</li>
+							))}
+						</ul>
+					</details>
+				))
+			}
+		</div>
+		<script is:inline>
+			// En celular los grupos arrancan cerrados para que la lista no sea eterna.
+			// Sin JavaScript quedan todos abiertos.
+			if (matchMedia('(max-width: 860px)').matches) {
+				document.querySelectorAll('#precios details.categoria').forEach((d) => d.removeAttribute('open'));
+			}
+		</script>
+		<p class="nota">Precios actualizados al {actualizado}.</p>
+
+		<h3 class="subtitulo">Formas de pago</h3>
 		<ul class="formas">
 			{
 				formasDePago.map((f) => (
@@ -18,7 +70,7 @@ import Icono from './Icono.astro';
 						<span class="forma-icono">
 							<Icono nombre={f.icono} />
 						</span>
-						<h3>{f.titulo}</h3>
+						<h4>{f.titulo}</h4>
 						<p>{f.texto}</p>
 					</li>
 				))
@@ -38,11 +90,127 @@ import Icono from './Icono.astro';
 </section>
 
 <style>
+	/* Columnas tipo mampostería: las tarjetas tienen distinto alto y así no quedan huecos */
+	.categorias {
+		columns: 2;
+		column-gap: 1rem;
+		margin-top: clamp(2.5rem, 5vw, 3.5rem);
+	}
+
+	.categoria {
+		break-inside: avoid;
+		margin-bottom: 1rem;
+		padding: 1.25rem 1.25rem 0.5rem;
+		border: 1px solid var(--sup-borde-osc);
+		border-radius: 10px;
+		background: var(--sup-alt);
+	}
+
+	.categoria summary {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		gap: 1rem;
+		cursor: pointer;
+		list-style: none;
+	}
+
+	.categoria summary::-webkit-details-marker {
+		display: none;
+	}
+
+	.cabeza {
+		display: flex;
+		flex-wrap: wrap;
+		align-items: baseline;
+		gap: 0.2rem 0.75rem;
+	}
+
+	.categoria h3 {
+		color: var(--azul-300);
+	}
+
+	.cantidad {
+		color: var(--suave);
+		font-size: 0.9375rem;
+	}
+
+	/* El + gira hasta ser una × al abrir el grupo, como en las preguntas frecuentes */
+	.signo {
+		display: grid;
+		place-items: center;
+		flex: none;
+		color: var(--azul-300);
+		transition: transform 0.25s ease;
+	}
+
+	.categoria[open] .signo {
+		transform: rotate(45deg);
+	}
+
+	.categoria:not([open]) {
+		padding-bottom: 1.25rem;
+	}
+
+	.aclaracion {
+		margin-top: 0.4rem;
+		color: var(--suave);
+		font-size: 0.9375rem;
+	}
+
+	.categoria ul {
+		margin: 0.5rem 0 0;
+		padding: 0;
+		list-style: none;
+	}
+
+	/* Servicio y precio en la misma línea; el detalle abajo, a todo el ancho */
+	.precio {
+		display: grid;
+		grid-template-columns: minmax(0, 1fr) auto;
+		align-items: baseline;
+		column-gap: 1rem;
+		padding-block: 0.85rem;
+	}
+
+	.precio + .precio {
+		border-top: 1px solid var(--sup-borde-osc);
+	}
+
+	.servicio {
+		font: 700 1.0625rem/1.3 var(--fuente-titulos);
+		color: var(--titulo);
+	}
+
+	.precio p {
+		grid-column: 1 / -1;
+		margin-top: 0.3rem;
+		color: var(--suave);
+		font-size: 0.9375rem;
+	}
+
+	.monto {
+		font: 700 1.25rem/1.2 var(--fuente-titulos);
+		color: var(--titulo);
+		white-space: nowrap;
+	}
+
+	.nota {
+		margin-top: 0.75rem;
+		color: var(--suave);
+		font-size: 0.9375rem;
+	}
+
+	.subtitulo {
+		margin-top: clamp(3rem, 6vw, 4.5rem);
+		font-size: 1.5rem;
+	}
+
 	.formas {
 		display: grid;
 		grid-template-columns: repeat(3, minmax(0, 1fr));
 		gap: 1rem;
-		margin: clamp(2.5rem, 5vw, 3.5rem) 0 0;
+		margin: 1.25rem 0 0;
 		padding: 0;
 		list-style: none;
 	}
@@ -99,6 +267,9 @@ import Icono from './Icono.astro';
 	}
 
 	@media (max-width: 860px) {
+		.categorias {
+			columns: 1;
+		}
 		.formas {
 			grid-template-columns: 1fr;
 			gap: 0.75rem;
@@ -116,7 +287,7 @@ import Icono from './Icono.astro';
 			grid-area: icono;
 			margin-bottom: 0;
 		}
-		.forma h3 {
+		.forma h4 {
 			grid-area: titulo;
 		}
 		.forma p {

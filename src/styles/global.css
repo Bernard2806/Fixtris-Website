@@ -86,7 +86,8 @@ body {
 
 h1,
 h2,
-h3 {
+h3,
+h4 {
 	font-family: var(--fuente-titulos);
 	color: var(--titulo);
 	margin: 0;
@@ -100,7 +101,8 @@ h2 {
 	letter-spacing: -0.015em;
 }
 
-h3 {
+h3,
+h4 {
 	font-size: 1.25rem;
 	font-weight: 700;
 	line-height: 1.25;
