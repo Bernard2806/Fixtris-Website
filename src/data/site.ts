@@ -122,9 +122,12 @@ export const formasDePago = [
 	},
 ] as const;
 
+// Días desde que avisamos que el equipo está listo hasta considerarlo abandonado.
+export const diasParaRetirar = 90;
+
 export const compromiso = {
 	titulo: 'Necesitamos compromiso de tu parte',
-	texto: 'No guardamos equipos a la espera. Si el trabajo lleva repuestos o tiempo, cobramos una parte antes de arrancar, y sin un acuerdo de pago no empezamos.',
+	texto: `No guardamos equipos a la espera. Si el trabajo lleva repuestos o tiempo, cobramos una parte antes de arrancar, y sin un acuerdo de pago no empezamos. Los equipos que no se retiran dentro de los ${diasParaRetirar} días del aviso se consideran abandonados.`,
 };
 
 // TODO: confirmar plazos y políticas antes de publicar.
@@ -158,5 +161,9 @@ export const preguntas = [
 		pregunta: '¿Trabajan con todas las marcas?',
 		respuesta:
 			'Sí: notebooks, PC y consolas de cualquier marca, y también equipos armados. Si no podemos arreglarlo, te lo decimos en el diagnóstico.',
+	},
+	{
+		pregunta: '¿Qué pasa si no retiro mi equipo?',
+		respuesta: `Cuando el equipo está listo te avisamos. Si pasan ${diasParaRetirar} días desde ese aviso y no lo retirás ni nos escribís, lo consideramos abandonado y podemos disponer de él libremente. Antes borramos el disco por software, así tus archivos no quedan en ningún lado.`,
 	},
 ];
