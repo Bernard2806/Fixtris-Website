@@ -1,0 +1,100 @@
+---
+import { servicios } from '../data/site';
+
+// Alterna los tonos en damero, fila por fila (cada fila suma 6 columnas)
+let fila = 0;
+let suma = 0;
+let posicion = 0;
+const piezas = servicios.map((s) => {
+	const honda = (fila + posicion) % 2 === 1;
+	suma += s.ancho;
+	posicion++;
+	if (suma >= 6) {
+		fila++;
+		suma = 0;
+		posicion = 0;
+	}
+	return { ...s, honda };
+});
+---
+
+<section class="servicios seccion tema-claro" id="servicios" aria-labelledby="titulo-servicios">
+	<div class="contenedor">
+		<h2 id="titulo-servicios">Lo que arreglamos</h2>
+		<p class="intro">Si tiene chip, lo revisamos: computadoras, notebooks, consolas y netbooks. Estos son los trabajos que más nos piden.</p>
+
+		<ul class="pozo">
+			{
+				piezas.map((s) => (
+					<li class:list={['pieza', { 'pieza-honda': s.honda }]} style={`--ancho: ${s.ancho}`}>
+						<h3>{s.titulo}</h3>
+						<p>{s.texto}</p>
+					</li>
+				))
+			}
+		</ul>
+	</div>
+</section>
+
+<style>
+	/* Cada fila suma 6 columnas: las piezas completan la línea, como en el logo */
+	.pozo {
+		display: grid;
+		grid-template-columns: repeat(6, minmax(0, 1fr));
+		gap: 6px;
+		margin: clamp(2.5rem, 5vw, 3.5rem) 0 0;
+		padding: 6px;
+		list-style: none;
+		background: var(--azul-950);
+		border-radius: 10px;
+	}
+
+	.pieza {
+		grid-column: span var(--ancho);
+		display: grid;
+		align-content: start;
+		gap: 0.5rem;
+		min-height: 11rem;
+		padding: clamp(1.25rem, 2.5vw, 1.75rem);
+		border-radius: var(--radio);
+		background: #ffffff;
+	}
+
+	.pieza p {
+		max-width: 36rem;
+	}
+
+	.pieza h3 {
+		color: var(--tono-titulo, var(--titulo));
+	}
+
+	.pieza p {
+		color: var(--tono-texto, var(--suave));
+	}
+
+	.pieza-honda {
+		--tono-titulo: #fff;
+		--tono-texto: var(--azul-100);
+		background: var(--azul-700);
+	}
+
+	@media (max-width: 860px) {
+		.pozo {
+			grid-template-columns: 1fr;
+		}
+		/* En una sola columna el damero pasa a alternar de a uno */
+		.pieza,
+		.pieza-honda {
+			--tono-titulo: var(--titulo);
+			--tono-texto: var(--suave);
+			grid-column: auto;
+			min-height: 0;
+			background: #fff;
+		}
+		.pieza:nth-child(even) {
+			--tono-titulo: #fff;
+			--tono-texto: var(--azul-100);
+			background: var(--azul-700);
+		}
+	}
+</style>

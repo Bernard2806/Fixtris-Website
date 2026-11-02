@@ -1,0 +1,109 @@
+---
+import { pasos } from '../data/site';
+---
+
+<section class="proceso seccion tema-oscuro tema-alt" id="como-trabajamos" aria-labelledby="titulo-proceso">
+	<div class="contenedor">
+		<h2 id="titulo-proceso">Cómo trabajamos</h2>
+		<p class="intro">Sin sorpresas: sabés qué tiene tu equipo y cuánto sale antes de que lo toquemos.</p>
+
+		<ol class="pasos">
+			{
+				pasos.map((p, i) => (
+					<li class="paso">
+						<span class="nodo" aria-hidden="true" />
+						<span class="numero" aria-hidden="true">
+							{i + 1}
+						</span>
+						<h3>{p.titulo}</h3>
+						<p>{p.texto}</p>
+					</li>
+				))
+			}
+		</ol>
+	</div>
+</section>
+
+<style>
+	.proceso {
+		background: var(--sup-alt);
+	}
+
+	/* Una pista de circuito une los pasos, como las de "Computer" en el logo */
+	.pasos {
+		position: relative;
+		display: grid;
+		grid-template-columns: repeat(4, minmax(0, 1fr));
+		gap: clamp(1.5rem, 3vw, 2.5rem);
+		margin: clamp(3rem, 6vw, 4.5rem) 0 0;
+		padding: 0;
+		list-style: none;
+	}
+
+	.pasos::before {
+		content: '';
+		position: absolute;
+		top: 9px;
+		left: 9px;
+		right: 0;
+		height: 4px;
+		border-radius: 2px;
+		background: linear-gradient(90deg, var(--azul-500) 85%, transparent);
+	}
+
+	.paso {
+		position: relative;
+		display: grid;
+		align-content: start;
+		gap: 0.6rem;
+	}
+
+	.nodo {
+		width: 22px;
+		height: 22px;
+		margin-bottom: 1.25rem;
+		border: 4px solid var(--azul-500);
+		border-radius: 50%;
+		background: var(--sup-alt);
+	}
+
+	.paso:last-child .nodo {
+		border-color: var(--ambar-400);
+	}
+
+	.numero {
+		font: 700 3rem/1 var(--fuente-titulos);
+		color: var(--azul-300);
+	}
+
+	.paso p {
+		color: var(--suave);
+		max-width: 22rem;
+	}
+
+	@media (max-width: 860px) {
+		.pasos {
+			grid-template-columns: 1fr;
+			gap: 2.5rem;
+			padding-left: 3rem;
+		}
+		.pasos::before {
+			top: 9px;
+			bottom: 0;
+			left: 9px;
+			right: auto;
+			width: 4px;
+			height: auto;
+			background: linear-gradient(180deg, var(--azul-500) 85%, transparent);
+		}
+		.nodo {
+			position: absolute;
+			left: -3rem;
+			top: 0;
+			margin: 0;
+		}
+		.numero {
+			font-size: 2.25rem;
+		}
+	}
+</style>

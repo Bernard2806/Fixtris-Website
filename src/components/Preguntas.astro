@@ -1,0 +1,90 @@
+---
+import { preguntas } from '../data/site';
+import Icono from './Icono.astro';
+---
+
+<section class="preguntas seccion tema-claro" id="preguntas" aria-labelledby="titulo-preguntas">
+	<div class="contenedor disposicion">
+		<div>
+			<h2 id="titulo-preguntas">Preguntas frecuentes</h2>
+			<p class="intro">Si tu duda no está acá, escribinos y te respondemos.</p>
+		</div>
+		<div class="lista">
+			{
+				preguntas.map((p) => (
+					<details name="preguntas">
+						<summary>
+							<span>{p.pregunta}</span>
+							<span class="signo">
+								<Icono nombre="plus" />
+							</span>
+						</summary>
+						<p>{p.respuesta}</p>
+					</details>
+				))
+			}
+		</div>
+	</div>
+</section>
+
+<style>
+	.disposicion {
+		display: grid;
+		grid-template-columns: minmax(0, 0.8fr) minmax(0, 1.2fr);
+		gap: clamp(2rem, 6vw, 6rem);
+		align-items: start;
+	}
+
+	.lista {
+		border-top: 2px solid var(--azul-950);
+	}
+
+	details {
+		border-bottom: 1px solid var(--linea);
+	}
+
+	summary {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		gap: 1.5rem;
+		padding-block: 1.35rem;
+		cursor: pointer;
+		list-style: none;
+		font: 700 1.1875rem/1.35 var(--fuente-titulos);
+		color: var(--titulo);
+	}
+
+	summary::-webkit-details-marker {
+		display: none;
+	}
+
+	summary:hover {
+		color: var(--azul-700);
+	}
+
+	/* El + gira hasta ser una × al abrir la respuesta */
+	.signo {
+		display: grid;
+		place-items: center;
+		flex: none;
+		color: var(--azul-700);
+		transition: transform 0.25s ease;
+	}
+
+	details[open] .signo {
+		transform: rotate(45deg);
+	}
+
+	details p {
+		max-width: 38rem;
+		padding-bottom: 1.5rem;
+		color: var(--suave);
+	}
+
+	@media (max-width: 860px) {
+		.disposicion {
+			grid-template-columns: 1fr;
+		}
+	}
+</style>
