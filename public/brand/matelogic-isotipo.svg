@@ -1,0 +1,206 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 424 552" width="424" height="552">
+  <title>MateLogic — isotipo</title>
+  <defs>
+    <!-- Mate (calabaza) -->
+    <linearGradient id="gourdEdge" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#6e432e"/>
+      <stop offset="0.6" stop-color="#5c3828"/>
+      <stop offset="1" stop-color="#33211a"/>
+    </linearGradient>
+    <linearGradient id="gourdBase" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#8a583b"/>
+      <stop offset="0.5" stop-color="#7e4d34"/>
+      <stop offset="0.68" stop-color="#5c3b2a"/>
+      <stop offset="0.85" stop-color="#47301f"/>
+      <stop offset="1" stop-color="#36241b"/>
+    </linearGradient>
+    <radialGradient id="gourdMid" cx="0.35" cy="0.4" r="0.65">
+      <stop offset="0" stop-color="#94603f"/>
+      <stop offset="1" stop-color="#835035"/>
+    </radialGradient>
+    <radialGradient id="gourdLight" cx="0.22" cy="0.5" r="0.8">
+      <stop offset="0" stop-color="#b98b58"/>
+      <stop offset="0.6" stop-color="#a9774e"/>
+      <stop offset="1" stop-color="#9c6946"/>
+    </radialGradient>
+    <linearGradient id="gourdShine" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#d6b865"/>
+      <stop offset="1" stop-color="#c9a659"/>
+    </linearGradient>
+    <!-- Yerba -->
+    <linearGradient id="yerba" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#9dbb4a"/>
+      <stop offset="1" stop-color="#4e7c3c"/>
+    </linearGradient>
+    <!-- Borde del mate / virola -->
+    <linearGradient id="rimTop" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#ffffff"/>
+      <stop offset="0.2" stop-color="#e4f6f8"/>
+      <stop offset="0.65" stop-color="#b5e2e8"/>
+      <stop offset="1" stop-color="#78bec7"/>
+    </linearGradient>
+    <linearGradient id="rimFront" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#7cbcc6"/>
+      <stop offset="0.25" stop-color="#bfe6ec"/>
+      <stop offset="0.45" stop-color="#f5fcfd"/>
+      <stop offset="0.6" stop-color="#cbebf0"/>
+      <stop offset="0.85" stop-color="#8ec3cc"/>
+      <stop offset="1" stop-color="#60a4b0"/>
+    </linearGradient>
+    <linearGradient id="rimFrontShade" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#ffffff" stop-opacity="0.95"/>
+      <stop offset="0.2" stop-color="#ffffff" stop-opacity="0.4"/>
+      <stop offset="0.55" stop-color="#ffffff" stop-opacity="0"/>
+      <stop offset="0.85" stop-color="#063449" stop-opacity="0"/>
+      <stop offset="1" stop-color="#063449" stop-opacity="0.3"/>
+    </linearGradient>
+    <!-- Metal en dos tonos: mitad clara / mitad cian -->
+    <linearGradient id="strawTone" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#f2fcfc"/>
+      <stop offset="0.48" stop-color="#ddf3f4"/>
+      <stop offset="0.52" stop-color="#8ec7ce"/>
+      <stop offset="1" stop-color="#6eaeb7"/>
+    </linearGradient>
+    <linearGradient id="collarTone" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#f2fcfc"/>
+      <stop offset="0.4" stop-color="#ddf3f4"/>
+      <stop offset="0.44" stop-color="#8ec7ce"/>
+      <stop offset="1" stop-color="#6aaab3"/>
+    </linearGradient>
+    <!-- Bloques de píxeles -->
+    <linearGradient id="pixel" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#0aa3d3"/>
+      <stop offset="1" stop-color="#0086bb"/>
+    </linearGradient>
+    <linearGradient id="teal" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#1ca6b3"/>
+      <stop offset="0.6" stop-color="#0a899d"/>
+      <stop offset="1" stop-color="#006a84"/>
+    </linearGradient>
+
+    <!-- Formas reutilizadas: se dibujan una vez como contorno y otra como relleno -->
+    <path id="pixTop" d="M365 95H410V145H365Z"/>
+    <path id="pixMid" d="M308 159H348V212H410V308H365V253H308Z"/>
+    <path id="pixL" d="M280 292H323V345H378V388H313C285 416 242 471 169 469L280 355Z"/>
+    <g id="strawNavy" fill="#063449" stroke="#063449" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M207 190L250 107" fill="none" stroke-width="38"/>
+      <path d="M271 83Q310 47 364 18" fill="none" stroke-width="34"/>
+      <rect x="230" y="81" width="58" height="38" rx="17" transform="rotate(22 259 100)" stroke="none"/>
+    </g>
+
+    <clipPath id="gourdInner">
+      <circle cx="166" cy="321.5" r="143"/>
+    </clipPath>
+    <!-- La silueta del mate es circular, recortada en vertical a la derecha bajo el borde -->
+    <clipPath id="gourdSide">
+      <path d="M0 0H283V292H424V552H0Z"/>
+    </clipPath>
+    <!-- Paneles derechos: se funden con la sombra inferior -->
+    <linearGradient id="gourdPanel" gradientUnits="userSpaceOnUse" x1="0" y1="240" x2="0" y2="490">
+      <stop offset="0" stop-color="#512f22"/>
+      <stop offset="0.56" stop-color="#4e3022"/>
+      <stop offset="0.88" stop-color="#4a2f21" stop-opacity="0"/>
+    </linearGradient>
+    <clipPath id="gourdClip">
+      <path d="M0 210H270V349L138 481H0Z"/>
+    </clipPath>
+  </defs>
+
+  <!-- ============ Contorno general (navy) ============ -->
+  <g fill="#063449" stroke="#063449" stroke-linejoin="round" stroke-linecap="round">
+    <circle cx="166" cy="321.5" r="166" stroke="none" clip-path="url(#gourdSide)"/>
+    <path d="M31 198A126 60 0 0 1 283 198V295H240V210A126 58 0 0 1 31 210Z" stroke="none"/>
+    <use xlink:href="#pixTop" stroke-width="26"/>
+    <use xlink:href="#pixMid" stroke-width="26"/>
+    <use xlink:href="#pixL" stroke-width="26"/>
+    <use xlink:href="#strawNavy"/>
+    <!-- Circuitos -->
+    <g fill="none" stroke-width="10">
+      <path d="M66 528L130 466"/>
+      <path d="M105 529L152 482"/>
+      <path d="M170 527L206 491H259L353 397"/>
+      <path d="M217 538V511H285L372 424V398"/>
+    </g>
+    <circle cx="59" cy="536" r="15" stroke="none"/>
+    <circle cx="165" cy="532" r="15" stroke="none"/>
+  </g>
+  <!-- Agujeros de los nodos -->
+  <g fill="#fff">
+    <circle cx="59" cy="536" r="6"/>
+    <circle cx="165" cy="532" r="6"/>
+  </g>
+
+  <!-- ============ Cuerpo del mate ============ -->
+  <g clip-path="url(#gourdClip)">
+    <!-- Borde perimetral oscuro con filete naranja -->
+    <circle cx="166" cy="321.5" r="151" fill="url(#gourdEdge)"/>
+    <circle cx="166" cy="321.5" r="143" fill="url(#gourdBase)"/>
+    <!-- Volumen: banda media y disco claro -->
+    <g clip-path="url(#gourdInner)">
+      <ellipse cx="115" cy="288" rx="135" ry="100" fill="url(#gourdMid)"/>
+      <ellipse cx="108" cy="282" rx="100" ry="75" fill="url(#gourdLight)"/>
+      <!-- Paneles derechos, planos y oscuros -->
+      <path d="M98 418L220 296V210H300V350L160 500H98Z" fill="url(#gourdPanel)"/>
+    </g>
+    <g fill="none" stroke="#b5642f" stroke-width="1.5" stroke-opacity="0.85" stroke-linejoin="round">
+      <path d="M107 399L213 293V210"/>
+      <path d="M117 409L227 299V210"/>
+      <path d="M56.1 230A143 143 0 0 0 142 462.5V423L240 325V210"/>
+      <path d="M254 210V331L156 429V460L268 348V210"/>
+    </g>
+    <!-- Brillo amarillo -->
+    <path d="M48 262C70 270 92 278 110 283C98 300 76 309 50 312C45 295 44 277 48 262Z" fill="url(#gourdShine)"/>
+    <!-- Pistas del circuito sobre el mate -->
+    <g fill="none" stroke="#063449" stroke-width="10" stroke-linejoin="round">
+      <path d="M98 418L220 296V210"/>
+      <path d="M149 490V426L247 328V210"/>
+    </g>
+    <circle cx="98" cy="418" r="17" fill="#063449"/>
+    <circle cx="98" cy="418" r="7" fill="#6e432e"/>
+  </g>
+
+  <!-- ============ Borde del mate y yerba ============ -->
+  <path d="M31 198A126 60 0 0 1 283 198V210A126 58 0 0 1 31 210Z" fill="#063449"/>
+  <!-- Cara frontal de la virola (cuello cilíndrico metálico) -->
+  <path d="M45 197A112 47 0 0 0 269 197V210A112 46 0 0 1 45 210Z" fill="url(#rimFront)"/>
+  <path d="M45 197A112 47 0 0 0 269 197V210A112 46 0 0 1 45 210Z" fill="url(#rimFrontShade)"/>
+  <path d="M45.75 210A111.25 45.25 0 0 0 268.25 210" fill="none" stroke="#a5e0ea" stroke-width="1.5" stroke-linecap="round"/>
+  <!-- Labio superior de la virola -->
+  <ellipse cx="157" cy="197" rx="112" ry="47" fill="url(#rimTop)"/>
+  <!-- Brillo specular en el borde exterior frontal -->
+  <path d="M47 198A110 46 0 0 0 267 198" fill="none" stroke="#ffffff" stroke-width="2.5" stroke-opacity="0.9" stroke-linecap="round"/>
+  <!-- Boca interior (sombra de la abertura) -->
+  <ellipse cx="157" cy="196" rx="97" ry="34" fill="#063449"/>
+  <path d="M82 207C88 195 100 188 112 186C118 178 130 176 140 180C148 172 162 172 170 178C180 172 194 176 198 183C210 182 220 190 214 200C222 204 232 208 226 214C214 220 196 222 178 222C150 224 110 220 82 207Z" fill="url(#yerba)"/>
+  <g fill="#a9c552" opacity="0.85">
+    <ellipse cx="112" cy="194" rx="12" ry="6"/>
+    <ellipse cx="140" cy="186" rx="10" ry="5"/>
+    <ellipse cx="172" cy="187" rx="11" ry="5"/>
+    <ellipse cx="160" cy="201" rx="12" ry="5"/>
+    <ellipse cx="124" cy="208" rx="10" ry="4"/>
+    <ellipse cx="190" cy="206" rx="9" ry="4"/>
+  </g>
+  <ellipse cx="235" cy="204" rx="8" ry="3.5" fill="#86a845"/>
+  <!-- Reflejo interior metálico en el borde inferior de la boca -->
+  <path d="M62 196A95 33 0 0 0 252 196" fill="none" stroke="#88d8e5" stroke-width="2.5" stroke-opacity="0.8" stroke-linecap="round"/>
+
+  <!-- ============ Bombilla ============ -->
+  <use xlink:href="#strawNavy"/>
+  <!-- Tramo inferior -->
+  <rect x="-45.6" y="-9.5" width="91.2" height="19" rx="4" transform="translate(225 155.5) rotate(-62.6)" fill="url(#strawTone)"/>
+  <!-- Tramo superior curvo, se afina hacia la punta -->
+  <path d="M265.3 76.7Q306.3 41.7 360.2 15.5A4 4 0 0 1 363.8 22.5Q313.7 52.3 276.7 89.3Q268 86 265.3 76.7Z" fill="#7dbdc5"/>
+  <path d="M265.3 76.7Q306.3 41.7 360.2 15.5L362 19Q310 47 271 83Z" fill="#e9f8f8"/>
+  <!-- Virola -->
+  <rect x="240" y="90" width="38" height="20" rx="8" transform="rotate(22 259 100)" fill="url(#collarTone)"/>
+
+  <!-- ============ Bloques de píxeles ============ -->
+  <g>
+    <use xlink:href="#pixTop" fill="#6fd3e4"/>
+    <path d="M369 99H408V143H369Z" fill="url(#pixel)"/>
+    <use xlink:href="#pixMid" fill="#6fd3e4"/>
+    <path d="M313 164H346V216H408V306H369V251H313Z" fill="url(#pixel)"/>
+    <use xlink:href="#pixL" fill="#5fcadc"/>
+    <path d="M290 299H321V352H376V386H312C284 414 241 469 172 467L290 349Z" fill="url(#teal)"/>
+  </g>
+</svg>
