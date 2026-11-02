@@ -16,6 +16,11 @@ Estas reglas son obligatorias para cualquier agente que trabaje en este reposito
 - La descripción y el cuerpo van **en español**, en minúscula, en modo imperativo y sin punto final. Ejemplo: `feat(contacto): agregar botón flotante de WhatsApp`.
 - Dividir el trabajo en **varios commits por unidad lógica** (un componente, una funcionalidad), no un commit gigante, en un orden en el que cada commit compile (`pnpm build`).
 
+### Documentación actualizada: Context7
+
+- Se recomienda usar [Context7](https://context7.com/) para consultar la documentación vigente de Astro, Heroicons, Simple Icons y cualquier otra librería antes de escribir o cambiar código que dependa de su API.
+- Si el agente tiene el servidor MCP de Context7, usarlo (por ejemplo, la biblioteca `/websites/astro_build_en` para Astro) en lugar de depender de lo que recuerda: las APIs cambian entre versiones.
+
 ### Íconos
 
 - Solo íconos de librerías: Heroicons (MIT) para la interfaz y Simple Icons (CC0) para logos de terceros, siempre a través de `src/components/Icono.astro` y con el mismo tamaño (`--tam-icono`).
