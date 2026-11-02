@@ -1,0 +1,195 @@
+---
+import Icono from './Icono.astro';
+import { sitio, enlaceWhatsapp } from '../data/site';
+
+const telefono = `+${sitio.whatsapp}`;
+---
+
+<section class="contacto seccion tema-oscuro" id="contacto" aria-labelledby="titulo-contacto">
+	<div class="contenedor disposicion">
+		<div class="texto">
+			<h2 id="titulo-contacto">Contanos qué le pasa a tu equipo</h2>
+			<p class="intro">
+				Mandanos un mensaje con el modelo y qué está fallando. Si podés, sumá una foto: con eso ya te orientamos.
+			</p>
+		</div>
+
+		<dl class="datos">
+				<div>
+					<dt>Horario</dt>
+					<dd>{sitio.horario}</dd>
+				</div>
+				<div>
+					<dt>Dónde</dt>
+					<dd>{sitio.zona}</dd>
+				</div>
+		</dl>
+
+		<div class="canales">
+			<a class="canal canal-principal" href={enlaceWhatsapp()}>
+				<span class="canal-icono"><Icono nombre="whatsapp" /></span>
+				<span class="canal-texto">
+					<strong>Escribinos por WhatsApp</strong>
+					<span>{sitio.whatsappVisible}</span>
+				</span>
+			</a>
+			<a class="canal" href={`tel:${telefono}`}>
+				<span class="canal-icono">
+					<Icono nombre="phone" />
+				</span>
+				<span class="canal-texto">
+					<strong>Llamar</strong>
+					<span>{sitio.whatsappVisible}</span>
+				</span>
+			</a>
+			<a class="canal" href={`mailto:${sitio.email}`}>
+				<span class="canal-icono">
+					<Icono nombre="envelope" />
+				</span>
+				<span class="canal-texto">
+					<strong>Correo</strong>
+					<span>{sitio.email}</span>
+				</span>
+			</a>
+		</div>
+	</div>
+</section>
+
+<style>
+	.contacto {
+		background:
+			radial-gradient(50rem 30rem at 85% 100%, rgb(255 176 32 / 0.07), transparent 70%),
+			var(--sup-base);
+	}
+
+	.disposicion {
+		display: grid;
+		grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+		grid-template-areas:
+			'texto canales'
+			'datos canales';
+		column-gap: clamp(2.5rem, 6vw, 6rem);
+		row-gap: 2.5rem;
+		align-items: start;
+	}
+
+	.texto {
+		grid-area: texto;
+		align-self: end;
+	}
+
+	.datos {
+		grid-area: datos;
+		display: grid;
+		grid-template-columns: repeat(auto-fit, minmax(12rem, 1fr));
+		gap: 1.25rem 2rem;
+		margin: 0;
+	}
+
+	.canales {
+		grid-area: canales;
+		align-self: center;
+	}
+
+	dt {
+		font: 500 0.9375rem/1.3 var(--fuente-titulos);
+		color: var(--azul-300);
+	}
+
+	dd {
+		margin: 0.2rem 0 0;
+		color: var(--titulo);
+	}
+
+	.canales {
+		display: grid;
+		gap: 0.75rem;
+	}
+
+
+	.canal {
+		display: flex;
+		align-items: center;
+		gap: 1rem;
+		min-height: 4.5rem;
+		padding: 0.9rem 1.25rem;
+		border: 1px solid var(--sup-borde-osc);
+		border-radius: 10px;
+		background: var(--sup-alt);
+		color: var(--titulo);
+		text-decoration: none;
+		transition:
+			background-color 0.15s,
+			border-color 0.15s;
+	}
+
+	.canal:hover {
+		border-color: var(--azul-600);
+		background: var(--sup-tarjeta);
+	}
+
+	.canal-icono {
+		display: grid;
+		place-items: center;
+		flex: none;
+		width: 2.75rem;
+		height: 2.75rem;
+		border-radius: 8px;
+		background: var(--azul-950);
+		color: var(--azul-300);
+	}
+
+	.canal-texto {
+		display: grid;
+		gap: 0.1rem;
+		min-width: 0;
+	}
+
+	.canal-texto strong {
+		font: 700 1.125rem/1.25 var(--fuente-titulos);
+	}
+
+	.canal-texto span {
+		color: var(--suave);
+		font-size: 0.9375rem;
+		overflow-wrap: anywhere;
+	}
+
+	/* WhatsApp es el canal principal: lleva el ámbar de "lo que arregla" */
+	.canal-principal {
+		min-height: 5.5rem;
+		border-color: var(--ambar-400);
+		background: var(--ambar-400);
+		color: var(--azul-950);
+	}
+
+	.canal-principal:hover {
+		border-color: var(--ambar-300);
+		background: var(--ambar-300);
+	}
+
+	.canal-principal .canal-icono {
+		background: var(--azul-950);
+		color: var(--ambar-300);
+	}
+
+	.canal-principal .canal-texto strong {
+		font-size: 1.3rem;
+	}
+
+	.canal-principal .canal-texto span {
+		color: var(--azul-900);
+	}
+
+	/* En celular los canales van antes que el horario: son la acción principal */
+	@media (max-width: 860px) {
+		.disposicion {
+			grid-template-columns: 1fr;
+			grid-template-areas: 'texto' 'canales' 'datos';
+			row-gap: 2rem;
+		}
+		.canal-principal .canal-texto strong {
+			font-size: 1.15rem;
+		}
+	}
+</style>

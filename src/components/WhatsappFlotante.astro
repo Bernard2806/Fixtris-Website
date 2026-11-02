@@ -1,0 +1,62 @@
+---
+import Icono from './Icono.astro';
+import { enlaceWhatsapp } from '../data/site';
+---
+
+<a class="flotante" href={enlaceWhatsapp()} data-flotante aria-label="Escribinos por WhatsApp">
+	<Icono nombre="whatsapp" />
+	<span>WhatsApp</span>
+</a>
+
+<style>
+	/* Solo en pantallas chicas: el contacto siempre a un toque */
+	.flotante {
+		position: fixed;
+		right: 1rem;
+		bottom: calc(1rem + env(safe-area-inset-bottom));
+		z-index: 20;
+		display: none;
+		align-items: center;
+		gap: 0.5rem;
+		min-height: 3.25rem;
+		padding: 0 1.15rem 0 1rem;
+		border-radius: 999px;
+		background: var(--ambar-400);
+		color: var(--azul-950);
+		font: 700 1rem/1 var(--fuente-titulos);
+		text-decoration: none;
+		box-shadow: 0 6px 20px rgb(0 0 0 / 0.35);
+		transform: translateY(150%);
+		transition: transform 0.25s ease;
+	}
+
+	.flotante.visible {
+		transform: none;
+	}
+
+	@media (max-width: 860px) {
+		.flotante {
+			display: inline-flex;
+		}
+	}
+</style>
+
+<script>
+	const boton = document.querySelector<HTMLElement>('[data-flotante]');
+	const principal = document.querySelector('[data-cta-principal]');
+	const contacto = document.getElementById('contacto');
+
+	if (boton && principal && contacto) {
+		const visibles = new Set<Element>();
+		const observador = new IntersectionObserver((entradas) => {
+			for (const e of entradas) {
+				if (e.isIntersecting) visibles.add(e.target);
+				else visibles.delete(e.target);
+			}
+			// Se esconde mientras se ve el botón del hero o la sección de contacto
+			boton.classList.toggle('visible', visibles.size === 0);
+		});
+		observador.observe(principal);
+		observador.observe(contacto);
+	}
+</script>
