@@ -26,6 +26,12 @@ Estas reglas son obligatorias para cualquier agente que trabaje en este reposito
 - Solo íconos de librerías: Heroicons (MIT) para la interfaz y Simple Icons (CC0) para logos de terceros, siempre a través de `src/components/Icono.astro` y con el mismo tamaño (`--tam-icono`).
 - No dibujar íconos SVG a mano. Lo único dibujado a mano son los logos de la marca Fixtris.
 
+### Publicación en GitHub Pages
+
+- El sitio se publica en `https://bernard2806.github.io/Fixtris-Website/` con el workflow `.github/workflows/deploy.yml`, en cada push a `main`.
+- Como vive bajo `base: '/Fixtris-Website'`, **toda ruta interna** (archivos de `public/`, enlaces entre páginas) se arma con `ruta()` de `src/lib/ruta.ts`. Nunca escribir rutas absolutas como `"/brand/logo.svg"` o `href="/"`.
+- En desarrollo el sitio se abre en `http://localhost:4321/Fixtris-Website/`.
+
 ### Diseño
 
 - El sitio se consulta sobre todo desde el celular: diseñar mobile first y verificar en 360–412 px antes de dar algo por terminado.
@@ -37,7 +43,7 @@ Estas reglas son obligatorias para cualquier agente que trabaje en este reposito
 When starting the dev server, use background mode:
 
 ```
-pnpm astro dev --background
+pnpm astro dev --background   # http://localhost:4321/Fixtris-Website/
 ```
 
 Manage the background server with `pnpm astro dev stop`, `pnpm astro dev status`, and `pnpm astro dev logs`.
