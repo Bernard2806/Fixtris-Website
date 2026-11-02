@@ -1,11 +1,12 @@
 ---
 import { sitio } from '../data/site';
+import { ruta } from '../lib/ruta';
 const anio = new Date().getFullYear();
 ---
 
 <footer class="pie tema-oscuro">
 	<div class="contenedor fila">
-		<img src="/brand/logo-horizontal-oscuro.svg" alt="Fixtris Computer" width="170" height="50" loading="lazy" />
+		<img src={ruta('brand/logo-horizontal-oscuro.svg')} alt="Fixtris Computer" width="170" height="50" loading="lazy" />
 		<p>Reparación de computadoras, notebooks, consolas y hardware.</p>
 		<p class="legal">© {anio} {sitio.nombre}</p>
 	</div>

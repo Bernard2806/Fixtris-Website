@@ -2,6 +2,7 @@
 import { Font } from 'astro:assets';
 import '../styles/global.css';
 import { sitio } from '../data/site';
+import { ruta } from '../lib/ruta';
 
 interface Props {
 	titulo?: string;
@@ -13,7 +14,7 @@ const {
 	descripcion = sitio.descripcion,
 } = Astro.props;
 
-const imagen = new URL('/brand/avatar-1024.png', Astro.site ?? Astro.url).href;
+const imagen = new URL(ruta('brand/avatar-1024.png'), Astro.site ?? Astro.url).href;
 const canonica = new URL(Astro.url.pathname, Astro.site ?? Astro.url).href;
 ---
 
@@ -25,8 +26,9 @@ const canonica = new URL(Astro.url.pathname, Astro.site ?? Astro.url).href;
 		<title>{titulo}</title>
 		<meta name="description" content={descripcion} />
 		<link rel="canonical" href={canonica} />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<link rel="apple-touch-icon" href="/brand/avatar-1024.png" />
+		<link rel="icon" type="image/svg+xml" href={ruta('favicon.svg')} />
+		<link rel="apple-touch-icon" href={ruta('brand/avatar-1024.png')} />
+		<link rel="sitemap" href={ruta('sitemap-index.xml')} />
 		<meta name="theme-color" content="#041118" />
 		<meta name="generator" content={Astro.generator} />
 

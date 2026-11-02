@@ -1,19 +1,23 @@
 ---
 import Icono from './Icono.astro';
 import { enlaceWhatsapp } from '../data/site';
+import { ruta } from '../lib/ruta';
+
+// Los enlaces apuntan al inicio para que también funcionen desde la página 404
+const inicio = ruta('/');
 
 const enlaces = [
-	{ href: '#servicios', texto: 'Servicios' },
-	{ href: '#como-trabajamos', texto: 'Cómo trabajamos' },
-	{ href: '#preguntas', texto: 'Preguntas', largo: 'Preguntas frecuentes' },
-	{ href: '#contacto', texto: 'Contacto' },
+	{ href: `${inicio}#servicios`, texto: 'Servicios' },
+	{ href: `${inicio}#como-trabajamos`, texto: 'Cómo trabajamos' },
+	{ href: `${inicio}#preguntas`, texto: 'Preguntas', largo: 'Preguntas frecuentes' },
+	{ href: `${inicio}#contacto`, texto: 'Contacto' },
 ];
 ---
 
 <header class="cabecera" data-cabecera>
 	<div class="contenedor barra">
-		<a href="/" class="marca">
-			<img src="/brand/logo-horizontal-oscuro.svg" alt="Fixtris Computer, inicio" width="204" height="60" />
+		<a href={inicio} class="marca">
+			<img src={ruta('brand/logo-horizontal-oscuro.svg')} alt="Fixtris Computer, inicio" width="204" height="60" />
 		</a>
 
 		<button
