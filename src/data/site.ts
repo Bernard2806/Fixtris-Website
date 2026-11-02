@@ -232,7 +232,7 @@ export const precios: { categoria: string; aclaracion?: string; items: Precio[] 
 			},
 			{
 				servicio: 'Respaldo de archivos',
-				detalle: 'A un disco o pendrive que ponés vos, o en nuestra nube solo por unos días.',
+				detalle: 'A un disco o pendrive que ponés vos, o en nuestra nube durante 7 días.',
 				usd: 22.28, // $35.000 al MEP de $1.570,87 (02/11/2026)
 			},
 		],
