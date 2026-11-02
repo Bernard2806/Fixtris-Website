@@ -1,0 +1,42 @@
+---
+import { sitio } from '../data/site';
+const anio = new Date().getFullYear();
+---
+
+<footer class="pie tema-oscuro">
+	<div class="contenedor fila">
+		<img src="/brand/logo-horizontal-oscuro.svg" alt="Fixtris Computer" width="170" height="50" loading="lazy" />
+		<p>Reparación de computadoras, notebooks, consolas y hardware.</p>
+		<p class="legal">© {anio} {sitio.nombre}</p>
+	</div>
+</footer>
+
+<style>
+	.pie {
+		border-top: 1px solid var(--linea);
+		padding-block: 2.5rem;
+		background: var(--sup-base);
+	}
+
+	.fila {
+		display: flex;
+		flex-wrap: wrap;
+		align-items: center;
+		gap: 1rem 2rem;
+	}
+
+	.fila p {
+		color: var(--suave);
+		font-size: 0.9375rem;
+	}
+
+	.legal {
+		margin-left: auto;
+	}
+
+	@media (max-width: 640px) {
+		.legal {
+			margin-left: 0;
+		}
+	}
+</style>
