@@ -1,0 +1,106 @@
+---
+import Chip from './Chip.astro';
+import Icono from './Icono.astro';
+import { enlaceWhatsapp } from '../data/site';
+---
+
+<div class="hero tema-oscuro">
+	<section class="portada contenedor" id="contenido" aria-labelledby="titulo-portada">
+		<div class="portada-texto">
+			<h1 id="titulo-portada">Arreglamos tu compu pieza por pieza<span class="bloque" aria-hidden="true"></span></h1>
+			<p class="bajada">
+				Reparación de notebooks, PC, consolas y hardware, y desbloqueo de netbooks del gobierno. Primero te decimos
+				qué falla y cuánto sale; recién con tu OK lo arreglamos.
+			</p>
+			<div class="acciones">
+				<a class="boton boton-accion" href={enlaceWhatsapp()} data-cta-principal>
+					<Icono nombre="whatsapp" />
+					Escribinos por WhatsApp
+				</a>
+				<a class="boton boton-secundario" href="#servicios">Ver servicios</a>
+			</div>
+		</div>
+		<div class="portada-juego">
+			<Chip />
+		</div>
+	</section>
+</div>
+
+<style>
+	.hero {
+		position: relative;
+		overflow: clip;
+		background:
+			radial-gradient(60rem 40rem at 78% 45%, rgb(10 163 211 / 0.13), transparent 65%),
+			var(--sup-base);
+	}
+
+	.portada {
+		display: grid;
+		grid-template-columns: minmax(0, 1.05fr) minmax(0, 0.95fr);
+		align-items: center;
+		gap: clamp(2rem, 5vw, 5rem);
+		padding-block: clamp(2rem, 4vw, 3.5rem) clamp(4rem, 8vw, 6rem);
+	}
+
+	h1 {
+		font-size: clamp(2.75rem, 5.6vw, 4.6rem);
+		font-weight: 700;
+		line-height: 1;
+		letter-spacing: -0.025em;
+	}
+
+	/* El punto final es un bloque, como los puntos de las i del logo */
+	.bloque {
+		display: inline-block;
+		width: 0.17em;
+		height: 0.17em;
+		margin-left: 0.06em;
+		border-radius: 0.025em;
+		background: var(--azul-400);
+	}
+
+	.bajada {
+		max-width: 32rem;
+		margin-top: 1.5rem;
+		font-size: clamp(1.125rem, 1.6vw, 1.25rem);
+		color: var(--suave);
+	}
+
+	.acciones {
+		display: flex;
+		flex-wrap: wrap;
+		gap: 0.75rem;
+		margin-top: 2.25rem;
+	}
+
+	@media (max-width: 960px) {
+		.portada {
+			grid-template-columns: 1fr;
+			padding-top: 1rem;
+		}
+		.portada-juego {
+			max-width: 26rem;
+			width: 100%;
+			margin-inline: auto;
+		}
+	}
+
+	/* Una sola columna: los dos botones con el mismo ancho, alineados al texto */
+	@media (max-width: 960px) {
+		.acciones {
+			display: grid;
+			grid-template-columns: 1fr;
+		}
+		.acciones .boton {
+			width: 100%;
+			min-height: 3.5rem;
+		}
+	}
+
+	@media (min-width: 600px) and (max-width: 960px) {
+		.acciones {
+			grid-template-columns: 1fr 1fr;
+		}
+	}
+</style>
