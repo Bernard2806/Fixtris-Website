@@ -1,0 +1,47 @@
+---
+import { Font } from 'astro:assets';
+import '../styles/global.css';
+import { sitio } from '../data/site';
+
+interface Props {
+	titulo?: string;
+	descripcion?: string;
+}
+
+const {
+	titulo = `${sitio.nombre} | Reparación de computadoras y hardware`,
+	descripcion = sitio.descripcion,
+} = Astro.props;
+
+const imagen = new URL('/brand/avatar-1024.png', Astro.site ?? Astro.url).href;
+const canonica = new URL(Astro.url.pathname, Astro.site ?? Astro.url).href;
+---
+
+<!doctype html>
+<html lang="es-AR">
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<title>{titulo}</title>
+		<meta name="description" content={descripcion} />
+		<link rel="canonical" href={canonica} />
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<link rel="apple-touch-icon" href="/brand/avatar-1024.png" />
+		<meta name="theme-color" content="#041118" />
+		<meta name="generator" content={Astro.generator} />
+
+		<meta property="og:type" content="website" />
+		<meta property="og:locale" content="es_AR" />
+		<meta property="og:site_name" content={sitio.nombre} />
+		<meta property="og:title" content={titulo} />
+		<meta property="og:description" content={descripcion} />
+		<meta property="og:image" content={imagen} />
+		<meta name="twitter:card" content="summary" />
+
+		<Font cssVariable="--font-quicksand" preload />
+	</head>
+	<body>
+		<a class="saltar" href="#contenido">Saltar al contenido</a>
+		<slot />
+	</body>
+</html>
