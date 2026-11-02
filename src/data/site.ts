@@ -1,15 +1,14 @@
 // Datos del negocio. Todo el texto editable del sitio vive acá.
-// TODO: los datos de contacto son de ejemplo. Reemplazalos por los reales.
 
 export const sitio = {
 	nombre: 'Fixtris Computer',
 	descripcion:
 		'Reparación de computadoras, notebooks, consolas y hardware. Desbloqueo de netbooks del gobierno. Te decimos qué falla y cuánto sale antes de arreglar.',
-	whatsapp: '5491100000000', // solo números, con código de país
-	whatsappVisible: '+54 9 11 0000-0000',
-	email: 'hola@fixtris.com',
+	whatsapp: '5492346409771', // solo números, con código de país
+	whatsappVisible: '+54 9 2346 40-9771',
+	email: 'bgonzalezerramuspe2006@hotmail.com',
 	horario: 'Lunes a viernes de 9 a 18 h, sábados de 9 a 13 h',
-	zona: 'Taller en tu ciudad',
+	zona: 'Chivilcoy, Buenos Aires',
 };
 
 export function enlaceWhatsapp(texto = 'Hola Fixtris, quiero consultar por una reparación.') {
