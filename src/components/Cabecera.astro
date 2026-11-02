@@ -1,0 +1,297 @@
+---
+import Icono from './Icono.astro';
+import { enlaceWhatsapp } from '../data/site';
+
+const enlaces = [
+	{ href: '#servicios', texto: 'Servicios' },
+	{ href: '#como-trabajamos', texto: 'Cómo trabajamos' },
+	{ href: '#preguntas', texto: 'Preguntas', largo: 'Preguntas frecuentes' },
+	{ href: '#contacto', texto: 'Contacto' },
+];
+---
+
+<header class="cabecera" data-cabecera>
+	<div class="contenedor barra">
+		<a href="/" class="marca">
+			<img src="/brand/logo-horizontal-oscuro.svg" alt="Fixtris Computer, inicio" width="204" height="60" />
+		</a>
+
+		<button
+			class="hamburguesa"
+			type="button"
+			aria-expanded="false"
+			aria-controls="menu-principal"
+			data-abrir-menu
+		>
+			<span class="solo-lectores" data-etiqueta>Abrir menú</span>
+			<span class="icono-abrir"><Icono nombre="bars-3" /></span>
+			<span class="icono-cerrar"><Icono nombre="x-mark" /></span>
+		</button>
+
+		<div class="menu" id="menu-principal" data-menu>
+			<nav aria-label="Principal">
+				<ul>
+					{
+						enlaces.map((e) => (
+							<li>
+								<a href={e.href}>
+									{e.largo ? (
+										<>
+											<span class="en-barra">{e.texto}</span>
+											<span class="en-menu">{e.largo}</span>
+										</>
+									) : (
+										e.texto
+									)}
+								</a>
+							</li>
+						))
+					}
+				</ul>
+			</nav>
+			<a class="boton boton-accion boton-cabecera" href={enlaceWhatsapp()}>
+				<Icono nombre="whatsapp" />
+				<span>Pedir presupuesto</span>
+			</a>
+		</div>
+	</div>
+</header>
+
+<style>
+	/* Fija arriba: al bajar se oscurece y gana una línea para separarse de la página */
+	.cabecera {
+		--texto: #d5e2e7;
+		--titulo: #ffffff;
+		--linea: var(--sup-borde-osc);
+		position: sticky;
+		top: 0;
+		z-index: 30;
+		background: var(--sup-base);
+		border-bottom: 1px solid transparent;
+		transition:
+			background-color 0.25s,
+			border-color 0.25s,
+			box-shadow 0.25s;
+	}
+
+	.cabecera.con-scroll {
+		background: #01070a;
+		border-bottom-color: var(--sup-borde-osc);
+		box-shadow: 0 8px 24px rgb(0 0 0 / 0.35);
+	}
+
+	.cabecera.con-scroll .barra {
+		min-height: 4.5rem;
+	}
+
+	.barra {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		gap: 2rem;
+		min-height: 5.5rem;
+		transition: min-height 0.25s;
+	}
+
+	.marca {
+		position: relative;
+		z-index: 2;
+		flex: none;
+	}
+
+	.marca img {
+		width: clamp(8.5rem, 16vw, 12.75rem);
+		height: auto;
+	}
+
+	.menu {
+		display: flex;
+		align-items: center;
+		gap: 2rem;
+	}
+
+	nav ul {
+		display: flex;
+		gap: 1.75rem;
+		margin: 0;
+		padding: 0;
+		list-style: none;
+	}
+
+	nav a {
+		color: var(--texto);
+		text-decoration: none;
+		font: 500 1rem/1 var(--fuente-titulos);
+		padding-block: 0.5rem;
+	}
+
+	nav a:hover {
+		color: var(--azul-300);
+	}
+
+	.boton-cabecera {
+		min-height: 2.6rem;
+		padding: 0.5rem 1rem;
+		font-size: 0.9375rem;
+	}
+
+	/* En escritorio el ícono no hace falta */
+	.boton-cabecera :global(svg) {
+		display: none;
+	}
+
+	.hamburguesa {
+		display: none;
+	}
+
+	.en-menu {
+		display: none;
+	}
+
+	/* ---------- Pantallas chicas: menú hamburguesa ---------- */
+	@media (max-width: 1080px) {
+		.hamburguesa {
+			position: relative;
+			z-index: 2;
+			display: grid;
+			place-items: center;
+			width: 3rem;
+			height: 3rem;
+			margin-right: -0.5rem;
+			padding: 0;
+			border: 0;
+			border-radius: var(--radio);
+			background: transparent;
+			color: var(--titulo);
+			cursor: pointer;
+			-webkit-tap-highlight-color: transparent;
+		}
+
+		/* Barras cuando está cerrado, cruz cuando está abierto */
+		.icono-cerrar,
+		[aria-expanded='true'] .icono-abrir {
+			display: none;
+		}
+
+		[aria-expanded='true'] .icono-cerrar {
+			display: block;
+		}
+
+		.menu {
+			position: fixed;
+			inset: 0;
+			z-index: 1;
+			display: flex;
+			flex-direction: column;
+			align-items: stretch;
+			gap: 2rem;
+			padding: 6.5rem var(--margen) calc(2rem + env(safe-area-inset-bottom));
+			background: var(--sup-base);
+			overflow-y: auto;
+			visibility: hidden;
+			opacity: 0;
+			transform: translateY(-0.75rem);
+			transition:
+				opacity 0.2s ease,
+				transform 0.2s ease,
+				visibility 0s linear 0.2s;
+		}
+
+		.menu.abierto {
+			visibility: visible;
+			opacity: 1;
+			transform: none;
+			transition:
+				opacity 0.2s ease,
+				transform 0.2s ease;
+		}
+
+		nav ul {
+			flex-direction: column;
+			gap: 0;
+			border-top: 1px solid var(--linea);
+		}
+
+		nav li {
+			border-bottom: 1px solid var(--linea);
+		}
+
+		nav a {
+			display: flex;
+			align-items: center;
+			min-height: 4rem;
+			font-size: 1.5rem;
+			font-weight: 700;
+			color: var(--titulo);
+		}
+
+		.boton-cabecera {
+			min-height: 3.5rem;
+			font-size: 1.125rem;
+		}
+
+		.boton-cabecera :global(svg) {
+			display: block;
+		}
+
+		.en-barra {
+			display: none;
+		}
+
+		.en-menu {
+			display: inline;
+		}
+	}
+</style>
+
+<script>
+	const cabecera = document.querySelector<HTMLElement>('[data-cabecera]');
+	if (cabecera) {
+		const marcar = () => cabecera.classList.toggle('con-scroll', window.scrollY > 8);
+		marcar();
+		window.addEventListener('scroll', marcar, { passive: true });
+	}
+
+	const boton = document.querySelector<HTMLButtonElement>('[data-abrir-menu]');
+	const menu = document.querySelector<HTMLElement>('[data-menu]');
+	const etiqueta = document.querySelector<HTMLElement>('[data-etiqueta]');
+
+	if (boton && menu && etiqueta) {
+		const chico = matchMedia('(max-width: 1080px)');
+
+		const cerrar = (devolverFoco = false) => {
+			boton.setAttribute('aria-expanded', 'false');
+			etiqueta.textContent = 'Abrir menú';
+			menu.classList.remove('abierto');
+			document.documentElement.style.overflow = '';
+			if (devolverFoco) boton.focus();
+		};
+
+		const abrir = () => {
+			boton.setAttribute('aria-expanded', 'true');
+			etiqueta.textContent = 'Cerrar menú';
+			menu.classList.add('abierto');
+			document.documentElement.style.overflow = 'hidden';
+			menu.querySelector<HTMLElement>('a')?.focus({ preventScroll: true });
+		};
+
+		boton.addEventListener('click', () => {
+			if (boton.getAttribute('aria-expanded') === 'true') cerrar();
+			else abrir();
+		});
+
+		// Elegir una opción cierra el menú y deja que el enlace haga el scroll
+		menu.addEventListener('click', (e) => {
+			if ((e.target as Element).closest('a')) cerrar();
+		});
+
+		document.addEventListener('keydown', (e) => {
+			if (e.key === 'Escape' && menu.classList.contains('abierto')) cerrar(true);
+		});
+
+		// Si se agranda la pantalla con el menú abierto, se cierra
+		chico.addEventListener('change', (e) => {
+			if (!e.matches) cerrar();
+		});
+	}
+</script>
