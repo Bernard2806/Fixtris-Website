@@ -4,6 +4,9 @@ on:
   # Se publica cada vez que se sube algo a main
   push:
     branches: [main]
+  # Recompila todos los días a las 9 (hora argentina) para actualizar los precios al dólar del día
+  schedule:
+    - cron: '0 12 * * *'
   # Permite publicarlo a mano desde la pestaña Actions
   workflow_dispatch:
 
