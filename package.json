@@ -16,5 +16,6 @@
     "astro": "^7.4.4",
     "heroicons": "^2.2.0",
     "simple-icons": "^16.36.0"
-  }
+  },
+  "packageManager": "pnpm@12.15.0"
 }
