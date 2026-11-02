@@ -79,10 +79,13 @@ import { enlaceWhatsapp } from '../data/site';
 			grid-template-columns: 1fr;
 			padding-top: 1rem;
 		}
+		/* La llave sobresale del chip ~17% de su ancho (arriba a la derecha):
+		   este aire evita que tape los botones de arriba */
 		.portada-juego {
 			max-width: 26rem;
 			width: 100%;
 			margin-inline: auto;
+			padding-top: 3rem;
 		}
 	}
 
@@ -98,7 +101,7 @@ import { enlaceWhatsapp } from '../data/site';
 		}
 	}
 
-	@media (min-width: 600px) and (max-width: 960px) {
+	@media (min-width: 720px) and (max-width: 960px) {
 		.acciones {
 			grid-template-columns: 1fr 1fr;
 		}
