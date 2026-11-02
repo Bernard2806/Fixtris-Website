@@ -1,0 +1,45 @@
+name: Publicar en GitHub Pages
+
+on:
+  # Se publica cada vez que se sube algo a main
+  push:
+    branches: [main]
+  # Permite publicarlo a mano desde la pestaña Actions
+  workflow_dispatch:
+
+# Permisos para clonar el repo y crear el despliegue de Pages
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+# Un solo despliegue a la vez; si llega un push nuevo, no se cancela el que ya está publicando
+concurrency:
+  group: pages
+  cancel-in-progress: false
+
+jobs:
+  build:
+    name: Compilar
+    runs-on: ubuntu-latest
+    steps:
+      - name: Clonar el repositorio
+        uses: actions/checkout@v7
+
+      # Detecta pnpm por pnpm-lock.yaml, instala, ejecuta `pnpm run build` y sube dist/
+      - name: Instalar, compilar y subir el sitio
+        uses: withastro/action@v6
+        with:
+          node-version: 24
+
+  deploy:
+    name: Publicar
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Publicar en GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v5
