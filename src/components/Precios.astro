@@ -1,0 +1,133 @@
+---
+import { formasDePago, compromiso } from '../data/site';
+import Icono from './Icono.astro';
+---
+
+<section class="precios seccion tema-oscuro" id="precios" aria-labelledby="titulo-precios">
+	<div class="contenedor">
+		<h2 id="titulo-precios">Precios y formas de pago</h2>
+		<p class="intro">
+			Cada trabajo lleva su presupuesto. Junto con el precio te decimos cuál de estas formas de pago corresponde: depende
+			del trabajo y de los repuestos.
+		</p>
+
+		<ul class="formas">
+			{
+				formasDePago.map((f) => (
+					<li class="forma">
+						<span class="forma-icono">
+							<Icono nombre={f.icono} />
+						</span>
+						<h3>{f.titulo}</h3>
+						<p>{f.texto}</p>
+					</li>
+				))
+			}
+		</ul>
+
+		<div class="compromiso">
+			<span class="compromiso-icono">
+				<Icono nombre="hand-raised" />
+			</span>
+			<div>
+				<h3>{compromiso.titulo}</h3>
+				<p>{compromiso.texto}</p>
+			</div>
+		</div>
+	</div>
+</section>
+
+<style>
+	.formas {
+		display: grid;
+		grid-template-columns: repeat(3, minmax(0, 1fr));
+		gap: 1rem;
+		margin: clamp(2.5rem, 5vw, 3.5rem) 0 0;
+		padding: 0;
+		list-style: none;
+	}
+
+	.forma {
+		display: grid;
+		align-content: start;
+		gap: 0.6rem;
+		padding: 1.5rem;
+		border: 1px solid var(--sup-borde-osc);
+		border-radius: 10px;
+		background: var(--sup-alt);
+	}
+
+	.forma-icono,
+	.compromiso-icono {
+		display: grid;
+		place-items: center;
+		width: 2.75rem;
+		height: 2.75rem;
+		margin-bottom: 0.4rem;
+		border-radius: 8px;
+		background: var(--azul-950);
+		color: var(--azul-300);
+	}
+
+	.forma p {
+		color: var(--suave);
+	}
+
+	/* El aviso de compromiso: el borde azul lo separa de las tarjetas sin usar el ámbar de las acciones */
+	.compromiso {
+		display: flex;
+		gap: 1.25rem;
+		align-items: flex-start;
+		margin-top: 1rem;
+		padding: 1.5rem;
+		border: 1px solid var(--azul-700);
+		border-left: 4px solid var(--azul-400);
+		border-radius: 10px;
+		background: color-mix(in oklab, var(--azul-500) 10%, var(--sup-base));
+	}
+
+	.compromiso-icono {
+		flex: none;
+		margin-bottom: 0;
+		background: var(--azul-900);
+	}
+
+	.compromiso p {
+		max-width: 46rem;
+		margin-top: 0.4rem;
+		color: var(--texto);
+	}
+
+	@media (max-width: 860px) {
+		.formas {
+			grid-template-columns: 1fr;
+			gap: 0.75rem;
+		}
+		/* En celular el ícono va al costado para que las tarjetas sean más bajas */
+		.forma {
+			grid-template-columns: auto minmax(0, 1fr);
+			grid-template-areas: 'icono titulo' 'texto texto';
+			align-items: center;
+			column-gap: 1rem;
+			row-gap: 0.75rem;
+			padding: 1.25rem;
+		}
+		.forma-icono {
+			grid-area: icono;
+			margin-bottom: 0;
+		}
+		.forma h3 {
+			grid-area: titulo;
+		}
+		.forma p {
+			grid-area: texto;
+		}
+	}
+
+	@media (max-width: 480px) {
+		.compromiso {
+			flex-direction: column;
+			gap: 0.9rem;
+		}
+	}
+</style>

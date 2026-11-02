@@ -91,7 +91,7 @@ export const pasos = [
 	},
 	{
 		titulo: 'Diagnóstico y presupuesto',
-		texto: 'Revisamos el equipo y te pasamos precio y plazo. No avanzamos sin tu OK.',
+		texto: 'Revisamos el equipo y te pasamos precio, plazo y forma de pago. No avanzamos sin tu OK.',
 	},
 	{
 		titulo: 'Reparación',
@@ -102,6 +102,30 @@ export const pasos = [
 		texto: 'Con el detalle de lo que hicimos y la garantía por escrito.',
 	},
 ];
+
+// Sección "Precios y formas de pago". Según el trabajo se usa una de estas formas.
+export const formasDePago = [
+	{
+		icono: 'banknotes',
+		titulo: 'Seña del 50 %',
+		texto: 'Pagás la mitad para que tomemos el trabajo y el resto cuando está terminado.',
+	},
+	{
+		icono: 'check-circle',
+		titulo: 'Todo al terminar',
+		texto: 'Pagás el 100 % cuando te entregamos el equipo funcionando.',
+	},
+	{
+		icono: 'shopping-cart',
+		titulo: 'Repuestos por tu cuenta',
+		texto: 'Te pasamos la lista de piezas: nos transferís el dinero o las comprás vos. El arreglo lo pagás al terminar.',
+	},
+] as const;
+
+export const compromiso = {
+	titulo: 'Necesitamos compromiso de tu parte',
+	texto: 'No guardamos equipos a la espera. Si el trabajo lleva repuestos o tiempo, cobramos una parte antes de arrancar, y sin un acuerdo de pago no empezamos.',
+};
 
 // TODO: confirmar plazos y políticas antes de publicar.
 export const preguntas = [
