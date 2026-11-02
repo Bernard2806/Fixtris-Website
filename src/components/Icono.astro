@@ -1,0 +1,49 @@
+---
+// Único punto de entrada para íconos del sitio. Solo se permiten íconos de librerías:
+//  - Heroicons (MIT) https://heroicons.com — íconos de interfaz, contorno de 24 px
+//  - Simple Icons (CC0-1.0) https://simpleicons.org — logos de otras marcas
+// Todos se muestran al mismo tamaño (--tam-icono, 24 px) y con el trazo original de la librería.
+// Los únicos SVG dibujados a mano del sitio son los de la marca Fixtris.
+import ArrowDown from 'heroicons/24/outline/arrow-down.svg';
+import ArrowPath from 'heroicons/24/outline/arrow-path.svg';
+import Bars3 from 'heroicons/24/outline/bars-3.svg';
+import ChevronLeft from 'heroicons/24/outline/chevron-left.svg';
+import ChevronRight from 'heroicons/24/outline/chevron-right.svg';
+import Envelope from 'heroicons/24/outline/envelope.svg';
+import Phone from 'heroicons/24/outline/phone.svg';
+import Plus from 'heroicons/24/outline/plus.svg';
+import XMark from 'heroicons/24/outline/x-mark.svg';
+import WhatsApp from 'simple-icons/icons/whatsapp.svg';
+
+const interfaz = {
+	'arrow-down': ArrowDown,
+	'arrow-path': ArrowPath,
+	'bars-3': Bars3,
+	'chevron-left': ChevronLeft,
+	'chevron-right': ChevronRight,
+	envelope: Envelope,
+	phone: Phone,
+	plus: Plus,
+	'x-mark': XMark,
+};
+
+const marcas = {
+	whatsapp: WhatsApp,
+};
+
+export type NombreIcono = keyof typeof interfaz | keyof typeof marcas;
+
+interface Props {
+	nombre: NombreIcono;
+}
+
+const { nombre } = Astro.props;
+const esMarca = nombre in marcas;
+const Componente = esMarca ? marcas[nombre as keyof typeof marcas] : interfaz[nombre as keyof typeof interfaz];
+
+// Los logos de Simple Icons llenan todo el cuadro de 24; Heroicons deja ~2 px de aire.
+// Ampliar el viewBox les da el mismo aire para que se vean del mismo tamaño.
+const extra = esMarca ? { fill: 'currentColor', viewBox: '-2.5 -2.5 29 29' } : {};
+---
+
+<Componente class="icono" width="24" height="24" aria-hidden="true" focusable="false" {...extra} />
