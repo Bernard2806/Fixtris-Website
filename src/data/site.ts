@@ -35,18 +35,18 @@ export const servicios = [
 	},
 	{
 		titulo: 'Notebooks',
-		texto: 'Pantallas, teclados, bisagras, puertos de carga y baterías. Equipos que no encienden o se apagan solos.',
+		texto: 'Pantallas, teclados, bisagras y baterías. Equipos que no encienden o se apagan solos.',
 		ancho: 4,
 	},
 	// fila 2
 	{
 		titulo: 'Consolas',
-		texto: 'PlayStation, Xbox y Nintendo: joysticks con drift, puertos HDMI, lectoras, fuentes y consolas que se recalientan.',
+		texto: 'PlayStation, Xbox y Nintendo: joysticks con drift, lectoras, fuentes y consolas que se recalientan.',
 		ancho: 4,
 	},
 	{
 		titulo: 'PC de escritorio',
-		texto: 'Fuentes, placas madre, placas de video y memorias. Pantallazos azules y reinicios.',
+		texto: 'Fuentes, placas de video, memorias y discos. Pantallazos azules y reinicios.',
 		ancho: 2,
 	},
 	// fila 3
