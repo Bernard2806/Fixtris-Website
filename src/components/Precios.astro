@@ -1,11 +1,15 @@
 ---
 import { formasDePago, compromiso, precios } from '../data/site';
 import { obtenerCotizacion, aPesos, formatearPesos } from '../lib/dolar';
+import { anclaPrecios } from '../lib/ancla';
 import Icono from './Icono.astro';
 
 const cotizacion = await obtenerCotizacion();
+// Una categoría con un solo precio (el diagnóstico) no se pliega: se ve siempre
 const grupos = precios.map((g) => ({
 	...g,
+	id: anclaPrecios(g.categoria),
+	fija: g.items.length === 1,
 	items: g.items.map((p) => ({ ...p, pesos: formatearPesos(aPesos(p.usd, cotizacion)) })),
 }));
 const actualizado = cotizacion.fecha.toLocaleDateString('es-AR', {
@@ -26,31 +30,36 @@ const actualizado = cotizacion.fecha.toLocaleDateString('es-AR', {
 
 		<div class="categorias">
 			{
-				grupos.map((g) => (
-					<details class="categoria" open>
-						<summary>
-							<span class="cabeza">
+				grupos.map((g) => {
+					const Categoria = g.fija ? 'div' : 'details';
+					return (
+						<Categoria class:list={['categoria', { 'categoria-fija': g.fija }]} id={g.id} open={!g.fija}>
+							{g.fija ? (
 								<h3>{g.categoria}</h3>
-								<span class="cantidad">
-									{g.items.length} {g.items.length === 1 ? 'precio' : 'precios'}
-								</span>
-							</span>
-							<span class="signo">
-								<Icono nombre="plus" />
-							</span>
-						</summary>
-						{g.aclaracion && <p class="aclaracion">{g.aclaracion}</p>}
-						<ul>
-							{g.items.map((p) => (
-								<li class="precio">
-									<span class="servicio">{p.servicio}</span>
-									<strong class="monto">{p.pesos}</strong>
-									{p.detalle && <p>{p.detalle}</p>}
-								</li>
-							))}
-						</ul>
-					</details>
-				))
+							) : (
+								<summary>
+									<span class="cabeza">
+										<h3>{g.categoria}</h3>
+										<span class="cantidad">{g.items.length} precios</span>
+									</span>
+									<span class="signo">
+										<Icono nombre="plus" />
+									</span>
+								</summary>
+							)}
+							{g.aclaracion && <p class="aclaracion">{g.aclaracion}</p>}
+							<ul>
+								{g.items.map((p) => (
+									<li class="precio">
+										<span class="servicio">{p.servicio}</span>
+										<strong class="monto">{p.pesos}</strong>
+										{p.detalle && <p>{p.detalle}</p>}
+									</li>
+								))}
+							</ul>
+						</Categoria>
+					);
+				})
 			}
 		</div>
 		<script is:inline>
@@ -58,6 +67,18 @@ const actualizado = cotizacion.fecha.toLocaleDateString('es-AR', {
 			// Sin JavaScript quedan todos abiertos.
 			if (matchMedia('(max-width: 860px)').matches) {
 				document.querySelectorAll('#precios details.categoria').forEach((d) => d.removeAttribute('open'));
+			}
+			// Los enlaces "Ver precios" de los servicios abren el grupo al que llevan
+			{
+				const abrir = (hash) => {
+					const grupo = hash && document.getElementById(decodeURIComponent(hash.slice(1)));
+					if (grupo instanceof HTMLDetailsElement && grupo.matches('#precios details')) grupo.open = true;
+				};
+				abrir(location.hash);
+				document.addEventListener('click', (e) => {
+					const enlace = e.target instanceof Element && e.target.closest('a[href^="#precios-"]');
+					if (enlace) abrir(enlace.getAttribute('href'));
+				});
 			}
 		</script>
 		<p class="nota">Precios actualizados al {actualizado}.</p>
@@ -148,7 +169,7 @@ const actualizado = cotizacion.fecha.toLocaleDateString('es-AR', {
 		transform: rotate(45deg);
 	}
 
-	.categoria:not([open]) {
+	details.categoria:not([open]) {
 		padding-bottom: 1.25rem;
 	}
 
