@@ -71,7 +71,6 @@ rounded:
   pieza: "6px"
   icono: "8px"
   tarjeta: "10px"
-  destacada: "14px"
   pastilla: "999px"
 spacing:
   junta: "6px"
@@ -176,8 +175,8 @@ Una placa azul petróleo casi negra, un azul eléctrico que la recorre y un ámb
 
 ### Neutral
 - **Placa Base** (`placa-base`): el fondo de la página, del hero, de precios, de contacto y del pie. También es el `theme-color`.
-- **Placa Alt** (`placa-alt`): un escalón más claro para las secciones alternas (proceso, MateLogic) y el fondo de las tarjetas de precio, formas de pago y canales.
-- **Placa Tarjeta** (`placa-tarjeta`): el escalón siguiente, para la tarjeta destacada de MateLogic, el hover de los canales y los controles del juego.
+- **Placa Alt** (`placa-alt`): un escalón más claro para las sección alterna (proceso) y el fondo de las tarjetas de precio, formas de pago y canales.
+- **Placa Tarjeta** (`placa-tarjeta`): el escalón siguiente, para el hover de los canales y los controles del juego.
 - **Placa Borde** (`placa-borde`): todos los bordes y divisores de 1 px sobre fondo oscuro.
 - **Barra con scroll** (`barra-scroll`): el negro casi puro de la barra fija al bajar, más oscuro que la página para separarse de ella.
 - **Texto Placa** (`texto-placa`) y **Suave Placa** (`suave-placa`): el texto corrido y el texto secundario sobre fondo oscuro. Los títulos van en blanco.
@@ -216,7 +215,7 @@ Una placa azul petróleo casi negra, un azul eléctrico que la recorre y un ámb
 
 El contenido vive en un contenedor de 74rem centrado, con margen lateral `clamp(1rem, 4vw, 2.5rem)`. Las secciones tienen un aire vertical de `clamp(4.5rem, 10vw, 8rem)`. El título y la bajada van arriba a la izquierda y el contenido de la sección empieza `clamp(2.5rem, 5vw, 3.5rem)` más abajo.
 
-El ritmo de la página alterna temas: hero oscuro, servicios claro, proceso oscuro alterno, precios oscuro, preguntas claro, contacto oscuro, MateLogic oscuro alterno y pie oscuro.
+El ritmo de la página alterna temas: hero oscuro, servicios claro, proceso oscuro alterno, precios oscuro, preguntas claro, contacto oscuro y pie oscuro. La página termina en contacto: el pie cierra con la marca y no repite los datos.
 
 Patrones de grilla:
 - **Servicios:** 6 columnas con juntas de 6 px sobre Azul Noche. Cada servicio ocupa 2, 3 o 4 columnas y cada fila suma 6.
@@ -233,19 +232,18 @@ Cortes de pantalla: 1080 px (la navegación pasa a hamburguesa), 960 px (el hero
 
 ## Elevation & Depth
 
-El sistema es plano. La profundidad sale de escalonar el tono de la placa (Base, Alt, Tarjeta) y de los bordes de 1 px en Placa Borde, no de sombras. Hay luz de ambiente, pero no relieve: degradés radiales muy tenues de azul detrás del hero y de la tarjeta de MateLogic, y de ámbar detrás del bloque de contacto, como el brillo de un equipo encendido.
+El sistema es plano. La profundidad sale de escalonar el tono de la placa (Base, Alt, Tarjeta) y de los bordes de 1 px en Placa Borde, no de sombras. Hay luz de ambiente, pero no relieve: degradés radiales muy tenues de azul detrás del hero y de ámbar detrás del bloque de contacto, como el brillo de un equipo encendido.
 
 ### Shadow Vocabulary
 - **Barra flotando** (`box-shadow: 0 8px 24px rgb(0 0 0 / 0.35)`): solo en la barra fija cuando la página ya bajó.
 - **Botón flotando** (`box-shadow: 0 6px 20px rgb(0 0 0 / 0.35)`): solo en el WhatsApp flotante del celular.
-- **Anillo de marco** (`box-shadow: 0 0 0 6px rgb(10 163 211 / 0.18)`): el aro azul del círculo claro que lleva el isotipo de MateLogic. Es un borde, no una elevación.
 
 ### Named Rules
 **La Regla Plana.** Las superficies son planas en reposo y en hover. La sombra queda para lo que flota sobre la página mientras se hace scroll. Una tarjeta nueva se separa del fondo subiendo un escalón de placa o con un borde, nunca con una sombra.
 
 ## Shapes
 
-Las formas son firmes y encastrables: esquinas apenas redondeadas y bordes netos, como piezas que calzan en la grilla. La escala de radios es corta: 6 px para botones, piezas del damero y controles; 8 px para el recuadro de los íconos; 10 px para tarjetas, la grilla de servicios y los canales; 14 px solo para la tarjeta destacada de MateLogic. La única forma totalmente redonda es la pastilla del WhatsApp flotante, que es la excepción porque flota. Los círculos se reservan para los nodos de la pista y el marco del isotipo de MateLogic.
+Las formas son firmes y encastrables: esquinas apenas redondeadas y bordes netos, como piezas que calzan en la grilla. La escala de radios es corta: 6 px para botones, piezas del damero y controles; 8 px para el recuadro de los íconos; 10 px para tarjetas, la grilla de servicios y los canales. La única forma totalmente redonda es la pastilla del WhatsApp flotante, que es la excepción porque flota. Los círculos se reservan para los nodos de la pista.
 
 Las celdas del chip usan un radio del 15 % de su lado, el mismo del logo.
 
@@ -263,11 +261,11 @@ Firmes, con bordes netos y siempre con texto en Quicksand 700.
 - **Cabecera:** el botón de acción en versión compacta (alto de 2.6rem y 0.9375rem), sin ícono en escritorio.
 
 ### Cards / Containers
-- **Corner Style:** 10 px (14 px en la tarjeta destacada).
-- **Background:** Placa Alt sobre Placa Base. Placa Tarjeta para la tarjeta destacada.
+- **Corner Style:** 10 px.
+- **Background:** Placa Alt sobre Placa Base.
 - **Shadow Strategy:** ninguna (ver la Regla Plana).
 - **Border:** 1 px en Placa Borde.
-- **Internal Padding:** 1.5rem en las formas de pago, 1.25rem en las categorías de precio, y `clamp(1.5rem, 5vw, 3.5rem)` en la tarjeta destacada.
+- **Internal Padding:** 1.5rem en las formas de pago y 1.25rem en las categorías de precio.
 - **Aviso de compromiso:** borde de 1 px en Azul Hondo, borde izquierdo de 4 px en Azul Brillo y fondo con un 10 % de Azul Pista sobre la placa. Es la única tarjeta "importante" y no usa ámbar.
 
 ### Navigation
@@ -295,7 +293,10 @@ Una pista de 4 px en Azul Pista, que se desvanece al final, une nodos circulares
 El isotipo del hero, convertido en una grilla de 6 × 6 donde la pieza en T (degradé de Ámbar Claro a Ámbar Tostado) se encaja en un hueco marcado con un contorno ámbar. Al completar la línea, las celdas destellan en blanco y se encogen (0.6 s). Si la pieza no encaja, el chip se sacude (0.4 s), y la llave gira con un rebote (`cubic-bezier(0.3, 1.4, 0.5, 1)`, 0.7 s). Los controles son botones cuadrados de 48 px en Placa Tarjeta, y el de soltar es ámbar. Sin JavaScript se ve igual que el logo. En celular (≤860 px) es solo la ilustración: sin controles ni ayuda, y sin capturar gestos.
 
 ### WhatsApp flotante
-Pastilla ámbar de 3.25rem con el logo de WhatsApp (Simple Icons) y texto en Quicksand 700. Aparece solo en celular, deslizándose desde abajo (0.25 s) cuando el botón principal del hero sale de la pantalla, y respeta el área segura del teléfono.
+Pastilla ámbar de 3.25rem con el logo de WhatsApp (Simple Icons) y texto en Quicksand 700. Aparece solo en celular, deslizándose desde abajo (0.25 s) cuando el botón principal del hero sale de la pantalla. Se esconde otra vez sobre la sección de contacto y el pie, y respeta el área segura del teléfono.
+
+### Pie
+Cierra con la marca: el logo, una línea de qué se arregla y, separada por un divisor de 1 px, la mención de MateLogic (enlace en Quicksand 700, tocable en 3rem) y el ©. No repite los datos de contacto, que están justo arriba.
 
 ### Íconos
 Todos pasan por un único componente y miden 24 px, la grilla nativa de Heroicons: Heroicons de contorno para la interfaz y Simple Icons para logos de terceros. Dentro de tarjetas y canales van en un recuadro de 44 px con radio de 8 px.

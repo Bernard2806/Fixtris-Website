@@ -1,6 +1,6 @@
 {
   "schemaVersion": 2,
-  "generatedAt": "2026-11-08T04:03:57+00:00",
+  "generatedAt": "2026-11-08T04:28:30+00:00",
   "title": "Design System: Fixtris Computer",
   "extensions": {
     "colorMeta": {
@@ -379,11 +379,6 @@
         "name": "boton-flotando",
         "value": "0 6px 20px rgb(0 0 0 / 0.35)",
         "purpose": "WhatsApp flotante en celular."
-      },
-      {
-        "name": "anillo-marco",
-        "value": "0 0 0 6px rgb(10 163 211 / 0.18)",
-        "purpose": "Aro del círculo del isotipo de MateLogic; borde, no elevación."
       }
     ],
     "motion": [
