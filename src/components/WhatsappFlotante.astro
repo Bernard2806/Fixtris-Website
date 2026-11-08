@@ -45,6 +45,7 @@ import { enlaceWhatsapp } from '../data/site';
 	const boton = document.querySelector<HTMLElement>('[data-flotante]');
 	const principal = document.querySelector('[data-cta-principal]');
 	const contacto = document.getElementById('contacto');
+	const pie = document.querySelector('.pie');
 
 	if (boton && principal && contacto) {
 		const visibles = new Set<Element>();
@@ -53,10 +54,11 @@ import { enlaceWhatsapp } from '../data/site';
 				if (e.isIntersecting) visibles.add(e.target);
 				else visibles.delete(e.target);
 			}
-			// Se esconde mientras se ve el botón del hero o la sección de contacto
+			// Se esconde mientras se ve el botón del hero, la sección de contacto o el pie
 			boton.classList.toggle('visible', visibles.size === 0);
 		});
 		observador.observe(principal);
 		observador.observe(contacto);
+		if (pie) observador.observe(pie);
 	}
 </script>
