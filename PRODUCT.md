@@ -29,7 +29,8 @@ Sitio de Fixtris Computer, un servicio técnico de computadoras, notebooks, netb
 
 - El contacto es por WhatsApp (botón principal y botón flotante); también hay teléfono y correo. Nada de formularios.
 - Proceso en cuatro pasos: nos contás qué pasa, diagnóstico y presupuesto, reparación, retirás el equipo con el detalle de lo hecho y la garantía por escrito.
-- Formas de pago según el trabajo: seña del 50 %, todo al terminar, o repuestos por cuenta del cliente.
+- Se paga en efectivo o por transferencia. Según el trabajo: seña del 50 %, todo al terminar, o repuestos por cuenta del cliente.
+- No hay un plazo fijo de reparación: se informa junto con el presupuesto, antes de empezar.
 - Condiciones: sin acuerdo de pago no se empieza; los equipos no retirados dentro de los 90 días del aviso se consideran abandonados, previo borrado del disco por software.
 - Horario: lunes a viernes de 9 a 18 h, sábados de 9 a 13 h.
 
@@ -40,8 +41,7 @@ Sitio de Fixtris Computer, un servicio técnico de computadoras, notebooks, netb
 - Se consulta sobre todo desde el celular: mobile first, verificado en 360–412 px.
 - No se hacen trabajos que requieran microsoldadura; no se los ofrece.
 - Español rioplatense con voseo.
-- **Sin decidir:** si se publica una dirección del taller. El texto menciona "el taller", pero hoy el sitio no muestra dirección.
-- **Pendiente:** las preguntas frecuentes llevan un TODO para confirmar plazos y políticas antes de darlas por definitivas.
+- No se publica la dirección del taller: el primer contacto es siempre por WhatsApp.
 
 ## Brand Commitments
 
