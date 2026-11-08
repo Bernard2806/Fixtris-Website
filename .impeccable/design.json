@@ -1,6 +1,6 @@
 {
   "schemaVersion": 2,
-  "generatedAt": "2026-11-08T04:31:59+00:00",
+  "generatedAt": "2026-11-08T04:35:07+00:00",
   "title": "Design System: Fixtris Computer",
   "extensions": {
     "colorMeta": {
@@ -351,6 +351,18 @@
       "numero": {
         "displayName": "Número",
         "purpose": "Números de los pasos; 2.25rem en celular."
+      },
+      "display-compacto": {
+        "displayName": "Display compacto",
+        "purpose": "Título del hero en escritorio con pantalla baja."
+      },
+      "subtitulo": {
+        "displayName": "Subtítulo",
+        "purpose": "Subtítulos dentro de una sección y enlaces del menú de celular."
+      },
+      "numero-celular": {
+        "displayName": "Número (celular)",
+        "purpose": "Números de los pasos en celular."
       },
       "body": {
         "displayName": "Body",

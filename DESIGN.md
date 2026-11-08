@@ -42,6 +42,22 @@ typography:
     fontSize: "1.25rem"
     fontWeight: 700
     lineHeight: 1.25
+  display-compacto:
+    fontFamily: "Quicksand, system-ui, sans-serif"
+    fontSize: "clamp(2.75rem, 4.6vw, 3.9rem)"
+    fontWeight: 700
+    lineHeight: 1
+    letterSpacing: "-0.025em"
+  subtitulo:
+    fontFamily: "Quicksand, system-ui, sans-serif"
+    fontSize: "1.5rem"
+    fontWeight: 700
+    lineHeight: 1.25
+  numero-celular:
+    fontFamily: "Quicksand, system-ui, sans-serif"
+    fontSize: "2.25rem"
+    fontWeight: 700
+    lineHeight: 1
   numero:
     fontFamily: "Quicksand, system-ui, sans-serif"
     fontSize: "3rem"
@@ -162,7 +178,7 @@ Una placa azul petróleo casi negra, un azul eléctrico que la recorre y un ámb
 
 ### Primary
 - **Azul Pista** (`azul-pista`): el color de la marca, el de las pistas del circuito. Pinta la línea que une los pasos, los nodos y las celdas del chip. Se usa en trazos y en superficies chicas, no en fondos grandes.
-- **Azul Brillo** (`azul-brillo`): la variante encendida. Va en el punto en bloque del título, en el borde izquierdo del aviso de compromiso y en el degradé de la llave.
+- **Azul Brillo** (`azul-brillo`): la variante encendida. Va en el punto en bloque del título, en el subrayado del precio del hero y en el degradé de la llave.
 - **Azul Cielo** (`azul-cielo`): el azul que se lee sobre la placa oscura. Lo usan los enlaces, el anillo de foco, el hover de la navegación, los títulos de categoría de precios, los números de los pasos, el borde del botón secundario y los íconos dentro de su recuadro.
 - **Azul Hondo** (`azul-hondo`): el azul de las secciones claras. Lo usan los enlaces y el foco sobre papel, el hover y el signo de las preguntas, y el fondo de las piezas oscuras del damero.
 - **Azul Hielo** (`azul-hielo`): el texto sobre Azul Hondo.
@@ -200,6 +216,7 @@ Una placa azul petróleo casi negra, un azul eléctrico que la recorre y un ámb
 - **Display** (700, `clamp(2.75rem, 5.6vw, 4.6rem)`, interlineado 1, -0.025em): solo el título del hero, que termina en un bloque Azul Brillo en lugar de punto. En escritorio con pantalla baja (alto de 820 px o menos) se compacta a `clamp(2.75rem, 4.6vw, 3.9rem)` para que el botón de WhatsApp se vea sin bajar.
 - **Headline** (700, `clamp(2rem, 4.2vw, 3.1rem)`, 1.08, -0.015em): el título de cada sección, con `text-wrap: balance`.
 - **Title** (700, 1.25rem, 1.25): títulos de pieza, tarjeta y forma de pago. Las preguntas frecuentes suben a 1.1875rem/1.35, y en el menú del celular los enlaces van a 1.5rem.
+- **Subtítulo** (700, 1.5rem, 1.25): subtítulos dentro de una sección, como "Formas de pago", y los enlaces del menú de celular.
 - **Número** (700, 3rem en escritorio y 2.25rem en celular): los números de los pasos, en Azul Cielo.
 - **Body** (400, 1.0625rem, 1.6): todo el texto corrido, con `text-wrap: pretty`. El ancho de línea se limita con `max-width` entre 22rem y 46rem según el bloque.
 - **Intro** (400, 1.125rem): la bajada bajo cada título de sección, en color suave y con un máximo de 34rem.
@@ -266,7 +283,8 @@ Firmes, con bordes netos y siempre con texto en Quicksand 700.
 - **Shadow Strategy:** ninguna (ver la Regla Plana).
 - **Border:** 1 px en Placa Borde.
 - **Internal Padding:** 1.5rem en las formas de pago y 1.25rem en las categorías de precio.
-- **Aviso de compromiso:** borde de 1 px en Azul Hondo, borde izquierdo de 4 px en Azul Brillo y fondo con un 10 % de Azul Pista sobre la placa. Es la única tarjeta "importante" y no usa ámbar.
+- **Aviso de compromiso:** borde de 1 px en Azul Hondo y fondo con un 10 % de Azul Pista sobre la placa, sin franja lateral. El ícono va al costado del título y el texto se alinea con el título, con unos 70 caracteres por línea (en celular usa todo el ancho). Es la única tarjeta "importante" y no usa ámbar.
+- **Formas de pago:** el ícono va al costado del título, nunca apilado encima, y el texto debajo a todo el ancho.
 
 ### Navigation
 - **Escritorio:** barra fija de 5.5rem que al bajar se reduce a 4.5rem, se oscurece a Barra con scroll y suma un borde inferior y la sombra Barra flotando (0.25 s). Los enlaces van en Quicksand 500, 1rem, Texto Placa, y en hover pasan a Azul Cielo. Termina con el botón de acción compacto.
