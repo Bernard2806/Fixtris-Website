@@ -1,6 +1,6 @@
 {
   "schemaVersion": 2,
-  "generatedAt": "2026-11-08T03:39:07+00:00",
+  "generatedAt": "2026-11-08T04:03:57+00:00",
   "title": "Design System: Fixtris Computer",
   "extensions": {
     "colorMeta": {
@@ -471,8 +471,8 @@
       "kind": "card",
       "refersTo": "pieza",
       "description": "Piezas blancas y Azul Hondo en damero sobre una junta Azul Noche de 6 px; cada fila suma 6 columnas.",
-      "html": "<ul class=\"ds-pozo\"><li class=\"ds-pieza\" style=\"--ancho:2\"><h3>Diagnóstico</h3><p>Encontramos qué falla y te pasamos el presupuesto antes de tocar nada.</p></li><li class=\"ds-pieza ds-pieza-honda\" style=\"--ancho:4\"><h3>Notebooks</h3><p>Pantallas, teclados, bisagras y baterías.</p></li><li class=\"ds-pieza ds-pieza-honda\" style=\"--ancho:4\"><h3>Consolas</h3><p>Joysticks con drift, lectoras y fuentes.</p></li><li class=\"ds-pieza\" style=\"--ancho:2\"><h3>PC de escritorio</h3><p>Fuentes, placas de video y discos.</p></li></ul>",
-      "css": ".ds-pozo { display: grid; grid-template-columns: repeat(6, minmax(0, 1fr)); gap: 6px; margin: 0; padding: 6px; list-style: none; background: #00212f; border-radius: 10px; } .ds-pieza { grid-column: span var(--ancho); display: grid; align-content: start; gap: 0.5rem; min-height: 9rem; padding: 1.25rem; border-radius: 6px; background: #ffffff; } .ds-pieza h3 { margin: 0; font-family: Quicksand, system-ui, sans-serif; font-weight: 700; font-size: 1.25rem; line-height: 1.25; color: #00212f; } .ds-pieza p { margin: 0; color: #4a585e; font-size: 1rem; line-height: 1.6; } .ds-pieza-honda { background: #016a8b; } .ds-pieza-honda h3 { color: #ffffff; } .ds-pieza-honda p { color: #cfefff; }"
+      "html": "<ul class=\"ds-pozo\"><li class=\"ds-pieza\" style=\"--ancho:2\"><h3>Diagnóstico</h3><p>Encontramos qué falla y te pasamos el presupuesto antes de tocar nada.</p><a class=\"ds-ver-precios\" href=\"#\">Ver precios</a></li><li class=\"ds-pieza ds-pieza-honda\" style=\"--ancho:4\"><h3>Notebooks</h3><p>Pantallas, teclados, bisagras y baterías.</p></li><li class=\"ds-pieza ds-pieza-honda\" style=\"--ancho:4\"><h3>Consolas</h3><p>Joysticks con drift, lectoras y fuentes.</p></li><li class=\"ds-pieza\" style=\"--ancho:2\"><h3>PC de escritorio</h3><p>Fuentes, placas de video y discos.</p></li></ul>",
+      "css": ".ds-pozo { display: grid; grid-template-columns: repeat(6, minmax(0, 1fr)); gap: 6px; margin: 0; padding: 6px; list-style: none; background: #00212f; border-radius: 10px; } .ds-pieza { grid-column: span var(--ancho); display: grid; align-content: start; gap: 0.5rem; min-height: 9rem; padding: 1.25rem; border-radius: 6px; background: #ffffff; } .ds-pieza h3 { margin: 0; font-family: Quicksand, system-ui, sans-serif; font-weight: 700; font-size: 1.25rem; line-height: 1.25; color: #00212f; } .ds-pieza p { margin: 0; color: #4a585e; font-size: 1rem; line-height: 1.6; } .ds-ver-precios { display: inline-flex; align-items: center; min-height: 3rem; margin-bottom: -0.75rem; color: #016a8b; font-family: Quicksand, system-ui, sans-serif; font-weight: 700; font-size: 1rem; text-decoration: underline; text-decoration-thickness: 2px; text-underline-offset: 0.25em; } .ds-ver-precios:hover { text-decoration-color: transparent; } .ds-ver-precios:focus-visible { outline: 3px solid #016a8b; outline-offset: 3px; } .ds-pieza-honda { background: #016a8b; } .ds-pieza-honda h3 { color: #ffffff; } .ds-pieza-honda p { color: #cfefff; }"
     },
     {
       "name": "Categoría de precios",

@@ -198,7 +198,7 @@ Una placa azul petróleo casi negra, un azul eléctrico que la recorre y un ámb
 **Character:** Quicksand tiene las terminaciones redondeadas del logo y le da a los títulos un tono amable, casi de juego. Las fuentes del sistema leen rápido y no pesan nada en un celular de gama baja. Quicksand se carga con la API de fuentes de Astro, con precarga, solo en 500 y 700.
 
 ### Hierarchy
-- **Display** (700, `clamp(2.75rem, 5.6vw, 4.6rem)`, interlineado 1, -0.025em): solo el título del hero, que termina en un bloque Azul Brillo en lugar de punto.
+- **Display** (700, `clamp(2.75rem, 5.6vw, 4.6rem)`, interlineado 1, -0.025em): solo el título del hero, que termina en un bloque Azul Brillo en lugar de punto. En escritorio con pantalla baja (alto de 820 px o menos) se compacta a `clamp(2.75rem, 4.6vw, 3.9rem)` para que el botón de WhatsApp se vea sin bajar.
 - **Headline** (700, `clamp(2rem, 4.2vw, 3.1rem)`, 1.08, -0.015em): el título de cada sección, con `text-wrap: balance`.
 - **Title** (700, 1.25rem, 1.25): títulos de pieza, tarjeta y forma de pago. Las preguntas frecuentes suben a 1.1875rem/1.35, y en el menú del celular los enlaces van a 1.5rem.
 - **Número** (700, 3rem en escritorio y 2.25rem en celular): los números de los pasos, en Azul Cielo.
@@ -277,8 +277,13 @@ Firmes, con bordes netos y siempre con texto en Quicksand 700.
 ### Damero de servicios (firma)
 La grilla de servicios es la línea del juego. Las piezas son blancas o Azul Hondo y se alternan en damero, fila por fila. Se calcula en el componente y no se carga a mano. Cada pieza tiene un alto mínimo de 11rem y ocupa 2, 3 o 4 columnas. En celular pasa a una columna y la alternancia es de a uno.
 
+Cada pieza termina en un enlace "Ver precios" (Quicksand 700, 1rem, subrayado de 2 px y flecha de Heroicons) que lleva a su categoría de la lista de precios y la abre. Siempre queda al pie de la pieza, alineado en toda la fila. A la vista es chico, pero se toca en 3rem de alto. Va en Azul Hondo sobre las piezas blancas y en blanco sobre las piezas Azul Hondo, y el anillo de foco cambia igual.
+
+### Precio en el hero
+Debajo de la bajada, una línea de texto común dice cuánto sale el diagnóstico. El monto va en Quicksand 700 a 1.25rem, en blanco, con un subrayado Azul Brillo que lleva a la lista de precios. Es un dato dentro de la frase, no una cifra destacada aparte.
+
 ### Lista de precios
-Cada categoría es un `<details>` tipo tarjeta, con el título en Azul Cielo, la cantidad de servicios en tono suave y un signo + que gira 45° hasta ser una × al abrirse (0.25 s). Cada fila pone el servicio (Quicksand 700) y el monto (Quicksand 700, 1.25rem, sin cortar) en la misma línea base, con el detalle debajo a todo el ancho y un divisor de 1 px entre filas.
+Una categoría con un solo precio (el diagnóstico) es una tarjeta fija que siempre está abierta, sin signo ni cantidad. Las demás categorías son un `<details>` tipo tarjeta, con el título en Azul Cielo, la cantidad de servicios en tono suave y un signo + que gira 45° hasta ser una × al abrirse (0.25 s). Cada fila pone el servicio (Quicksand 700) y el monto (Quicksand 700, 1.25rem, sin cortar) en la misma línea base, con el detalle debajo a todo el ancho y un divisor de 1 px entre filas.
 
 ### Canales de contacto
 Filas grandes, de 4.5rem, con un recuadro de ícono de 44 px (fondo Azul Noche, ícono Azul Cielo), un título en Quicksand y el dato en tono suave. WhatsApp es el canal principal: mide 5.5rem, va con fondo Ámbar Pieza y su ícono pasa a Ámbar Claro sobre Azul Noche. Los demás canales, en hover, pasan a Placa Tarjeta con borde en Azul Pista oscuro.
