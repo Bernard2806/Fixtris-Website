@@ -1,5 +1,5 @@
 ---
-import { preguntas } from '../data/site';
+import { preguntas, enlaceWhatsapp } from '../data/site';
 import Icono from './Icono.astro';
 ---
 
@@ -7,7 +7,7 @@ import Icono from './Icono.astro';
 	<div class="contenedor disposicion">
 		<div>
 			<h2 id="titulo-preguntas">Preguntas frecuentes</h2>
-			<p class="intro">Si tu duda no está acá, escribinos y te respondemos.</p>
+			<p class="intro">Si tu duda no está acá, <a href={enlaceWhatsapp()}>escribinos por WhatsApp</a> y te respondemos.</p>
 		</div>
 		<div class="lista">
 			{
@@ -20,6 +20,11 @@ import Icono from './Icono.astro';
 							</span>
 						</summary>
 						<p>{p.respuesta}</p>
+						{p.enlace && (
+							<a class="mas" href={p.enlace.destino}>
+								{p.enlace.texto}
+							</a>
+						)}
 					</details>
 				))
 			}
@@ -80,6 +85,21 @@ import Icono from './Icono.astro';
 		max-width: 38rem;
 		padding-bottom: 1.5rem;
 		color: var(--suave);
+	}
+
+	/* Enlace al pie de una respuesta: chico a la vista, tocable en 3rem */
+	.mas {
+		display: inline-flex;
+		align-items: center;
+		min-height: 3rem;
+		margin: -1rem 0 0.75rem;
+		font: 700 1rem/1.2 var(--fuente-titulos);
+		text-decoration-thickness: 2px;
+		text-underline-offset: 0.25em;
+	}
+
+	.mas:hover {
+		text-decoration-color: transparent;
 	}
 
 	@media (max-width: 860px) {

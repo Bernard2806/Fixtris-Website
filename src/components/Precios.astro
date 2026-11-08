@@ -1,5 +1,5 @@
 ---
-import { formasDePago, compromiso, precios } from '../data/site';
+import { formasDePago, mediosDePago, compromiso, precios } from '../data/site';
 import { obtenerCotizacion, aPesos, formatearPesos } from '../lib/dolar';
 import { anclaPrecios } from '../lib/ancla';
 import Icono from './Icono.astro';
@@ -15,6 +15,7 @@ const grupos = precios
 		fija: g.items.length === 1,
 		items: g.items.map((p) => ({ ...p, pesos: formatearPesos(aPesos(p.usd, cotizacion)) })),
 	}));
+const medios = new Intl.ListFormat('es', { type: 'disjunction' }).format(mediosDePago);
 const actualizado = cotizacion.fecha.toLocaleDateString('es-AR', {
 	timeZone: 'America/Argentina/Buenos_Aires',
 	day: '2-digit',
@@ -87,6 +88,7 @@ const actualizado = cotizacion.fecha.toLocaleDateString('es-AR', {
 		<p class="nota">Precios actualizados al {actualizado}.</p>
 
 		<h3 class="subtitulo">Formas de pago</h3>
+		<p class="medios">Pagás {medios}. Según el trabajo, usamos una de estas modalidades:</p>
 		<ul class="formas">
 			{
 				formasDePago.map((f) => (
@@ -243,6 +245,12 @@ const actualizado = cotizacion.fecha.toLocaleDateString('es-AR', {
 	.subtitulo {
 		margin-top: clamp(3rem, 6vw, 4.5rem);
 		font-size: 1.5rem;
+	}
+
+	.medios {
+		max-width: 38rem;
+		margin-top: 0.5rem;
+		color: var(--suave);
 	}
 
 	.formas {

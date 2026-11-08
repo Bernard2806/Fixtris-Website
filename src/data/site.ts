@@ -1,4 +1,5 @@
 // Datos del negocio. Todo el texto editable del sitio vive acá.
+import { anclaPrecios } from '../lib/ancla';
 
 export const sitio = {
 	nombre: 'Fixtris Computer',
@@ -98,7 +99,7 @@ export const servicios = [
 export const pasos = [
 	{
 		titulo: 'Nos contás qué pasa',
-		texto: 'Por WhatsApp o en el taller. Con eso ya te decimos si conviene revisarla.',
+		texto: 'Por WhatsApp. Con eso ya te decimos si conviene revisarla.',
 	},
 	{
 		titulo: 'Diagnóstico y presupuesto',
@@ -129,7 +130,11 @@ export const precios: { categoria: string; aclaracion?: string; items: Precio[] 
 	{
 		categoria: 'Todos los equipos',
 		items: [
-			{ servicio: 'Diagnóstico', usd: 6.37 }, // $10.000 al MEP de $1.570,87 (02/11/2026)
+			{
+				servicio: 'Diagnóstico',
+				detalle: 'Se descuenta si hacés la reparación con nosotros.',
+				usd: 6.37, // $10.000 al MEP de $1.570,87 (02/11/2026)
+			},
 		],
 	},
 	{
@@ -257,6 +262,9 @@ export const cotizacionDeRespaldo = {
 };
 
 // Sección "Precios y formas de pago". Según el trabajo se usa una de estas formas.
+// Con qué se paga. Se muestra como "Pagás en efectivo o por transferencia".
+export const mediosDePago = ['en efectivo', 'por transferencia'];
+
 export const formasDePago = [
 	{
 		icono: 'banknotes',
@@ -283,17 +291,18 @@ export const compromiso = {
 	texto: `No guardamos equipos a la espera. Si el trabajo lleva repuestos o tiempo, cobramos una parte antes de arrancar, y sin un acuerdo de pago no empezamos. Los equipos que no se retiran dentro de los ${diasParaRetirar} días del aviso se consideran abandonados.`,
 };
 
-// TODO: confirmar plazos y políticas antes de publicar.
+// `enlace` (opcional) suma un enlace debajo de la respuesta.
 export const preguntas = [
 	{
 		pregunta: '¿Cuánto sale revisar mi compu?',
 		respuesta:
-			'El diagnóstico tiene un costo fijo que se descuenta si hacés la reparación con nosotros. Lo encontrás en la sección de precios.',
+			'El diagnóstico tiene un costo fijo que se descuenta si hacés la reparación con nosotros.',
+		enlace: { texto: 'Ver el precio del diagnóstico', destino: `#${anclaPrecios('Todos los equipos')}` },
 	},
 	{
 		pregunta: '¿Cuánto tarda una reparación?',
 		respuesta:
-			'La mayoría están listas en 2 a 4 días hábiles. Si hay que pedir un repuesto, te avisamos el plazo antes de empezar.',
+			'Depende del trabajo y de si hay que pedir repuestos. Te decimos el plazo junto con el presupuesto, antes de empezar.',
 	},
 	{
 		pregunta: '¿Voy a perder mis archivos?',
