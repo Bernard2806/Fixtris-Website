@@ -142,7 +142,7 @@ components:
 
 **Creative North Star: "La placa a la vista"**
 
-Fixtris se ve como un equipo abierto sobre la mesa del técnico: fondo oscuro de placa, pistas azules que conectan las partes, bloques que encajan en una grilla exacta y una sola pieza ámbar, la que arregla. Todo sale del logo, que es un chip con una pieza en T que cae para completar la línea. El sitio repite esa idea en el damero de servicios, en la pista de circuito que une los pasos, en el punto en bloque del título y en el minijuego del hero.
+Fixtris se ve como un equipo abierto sobre la mesa del técnico: fondo oscuro de placa, pistas azules que conectan las partes, bloques que encajan en una grilla exacta y una sola pieza ámbar, la que arregla. Todo sale del logo, que es un chip con una pieza en T que cae para completar la línea. El sitio repite esa idea en el damero de servicios, en la pista de circuito que une los pasos, en el punto en bloque del título y en el isotipo grande del hero.
 
 El carácter es **lúdico y preciso, cercano y directo, nocturno y técnico, claro y honesto**. Lo lúdico vive en los detalles: la pieza que se puede encajar, el bloque al final del título. La precisión la pone la grilla. Lo nocturno es el estado por defecto, y los tramos claros (servicios, preguntas) son como abrir la tapa y prender la luz para leer con calma. La honestidad es visual: los precios se leen de un vistazo, en la misma línea que el servicio, sin letra chica ni efectos que distraigan.
 
@@ -165,18 +165,18 @@ Una placa azul petróleo casi negra, un azul eléctrico que la recorre y un ámb
 - **Azul Brillo** (`azul-brillo`): la variante encendida. Va en el punto en bloque del título, en el borde izquierdo del aviso de compromiso y en el degradé de la llave.
 - **Azul Cielo** (`azul-cielo`): el azul que se lee sobre la placa oscura. Lo usan los enlaces, el anillo de foco, el hover de la navegación, los títulos de categoría de precios, los números de los pasos, el borde del botón secundario y los íconos dentro de su recuadro.
 - **Azul Hondo** (`azul-hondo`): el azul de las secciones claras. Lo usan los enlaces y el foco sobre papel, el hover y el signo de las preguntas, y el fondo de las piezas oscuras del damero.
-- **Azul Hielo** (`azul-hielo`): el texto sobre Azul Hondo y el texto de los controles del juego.
+- **Azul Hielo** (`azul-hielo`): el texto sobre Azul Hondo.
 - **Azul Abismo** (`azul-abismo`) y **Azul Noche** (`azul-noche`): los fondos más profundos. Azul Noche es la junta del damero y el recuadro de los íconos, el texto sobre ámbar y el título en las secciones claras.
 
 ### Secondary
-- **Ámbar Pieza** (`ambar-pieza`): la pieza que encaja. Es el fondo de toda acción (botón principal, canal de WhatsApp, botón flotante, control "soltar" del juego, enlace para saltar al contenido) y marca el último nodo de los pasos, cuando retirás tu compu.
+- **Ámbar Pieza** (`ambar-pieza`): la pieza que encaja. Es el fondo de toda acción (botón principal, canal de WhatsApp, botón flotante, enlace para saltar al contenido) y marca el último nodo de los pasos, cuando retirás tu compu.
 - **Ámbar Claro** (`ambar-claro`): el hover de toda superficie ámbar y el inicio del degradé de la pieza.
 - **Ámbar Tostado** (`ambar-tostado`): el final del degradé de la pieza en T. No se usa solo.
 
 ### Neutral
 - **Placa Base** (`placa-base`): el fondo de la página, del hero, de precios, de contacto y del pie. También es el `theme-color`.
 - **Placa Alt** (`placa-alt`): un escalón más claro para las sección alterna (proceso) y el fondo de las tarjetas de precio, formas de pago y canales.
-- **Placa Tarjeta** (`placa-tarjeta`): el escalón siguiente, para el hover de los canales y los controles del juego.
+- **Placa Tarjeta** (`placa-tarjeta`): el escalón siguiente, para el hover de los canales.
 - **Placa Borde** (`placa-borde`): todos los bordes y divisores de 1 px sobre fondo oscuro.
 - **Barra con scroll** (`barra-scroll`): el negro casi puro de la barra fija al bajar, más oscuro que la página para separarse de ella.
 - **Texto Placa** (`texto-placa`) y **Suave Placa** (`suave-placa`): el texto corrido y el texto secundario sobre fondo oscuro. Los títulos van en blanco.
@@ -243,7 +243,7 @@ El sistema es plano. La profundidad sale de escalonar el tono de la placa (Base,
 
 ## Shapes
 
-Las formas son firmes y encastrables: esquinas apenas redondeadas y bordes netos, como piezas que calzan en la grilla. La escala de radios es corta: 6 px para botones, piezas del damero y controles; 8 px para el recuadro de los íconos; 10 px para tarjetas, la grilla de servicios y los canales. La única forma totalmente redonda es la pastilla del WhatsApp flotante, que es la excepción porque flota. Los círculos se reservan para los nodos de la pista.
+Las formas son firmes y encastrables: esquinas apenas redondeadas y bordes netos, como piezas que calzan en la grilla. La escala de radios es corta: 6 px para botones y piezas del damero; 8 px para el recuadro de los íconos; 10 px para tarjetas, la grilla de servicios y los canales. La única forma totalmente redonda es la pastilla del WhatsApp flotante, que es la excepción porque flota. Los círculos se reservan para los nodos de la pista.
 
 Las celdas del chip usan un radio del 15 % de su lado, el mismo del logo.
 
@@ -289,8 +289,8 @@ Filas grandes, de 4.5rem, con un recuadro de ícono de 44 px (fondo Azul Noche, 
 ### Pista de pasos (firma)
 Una pista de 4 px en Azul Pista, que se desvanece al final, une nodos circulares de 22 px con borde de 4 px. El último nodo es Ámbar Pieza, porque es el momento en que el equipo vuelve arreglado.
 
-### Chip jugable (firma)
-El isotipo del hero, convertido en una grilla de 6 × 6 donde la pieza en T (degradé de Ámbar Claro a Ámbar Tostado) se encaja en un hueco marcado con un contorno ámbar. Al completar la línea, las celdas destellan en blanco y se encogen (0.6 s). Si la pieza no encaja, el chip se sacude (0.4 s), y la llave gira con un rebote (`cubic-bezier(0.3, 1.4, 0.5, 1)`, 0.7 s). Los controles son botones cuadrados de 48 px en Placa Tarjeta, y el de soltar es ámbar. Sin JavaScript se ve igual que el logo. En celular (≤860 px) es solo la ilustración: sin controles ni ayuda, y sin capturar gestos.
+### Isotipo del hero (firma)
+El logo grande, quieto, al lado del texto del hero: el chip con la llave cruzada detrás y una grilla de 6 × 6 donde la pieza en T (degradé de Ámbar Claro a Ámbar Tostado) cae sobre un hueco marcado con un contorno ámbar. Es decorativo (oculto para lectores de pantalla) y no tiene controles ni animación. Mide hasta 25rem (o 60 % del alto de la pantalla) en escritorio y 14.5rem en celular.
 
 ### WhatsApp flotante
 Pastilla ámbar de 3.25rem con el logo de WhatsApp (Simple Icons) y texto en Quicksand 700. Aparece solo en celular, deslizándose desde abajo (0.25 s) cuando el botón principal del hero sale de la pantalla. Se esconde otra vez sobre la sección de contacto y el pie, y respeta el área segura del teléfono.
@@ -319,6 +319,6 @@ Todos pasan por un único componente y miden 24 px, la grilla nativa de Heroicon
 - **Don't** dibujar íconos SVG a mano. Lo único dibujado a mano son los logos de Fixtris.
 - **Don't** usar radios mayores a 10 px en componentes comunes ni formas de pastilla, salvo el WhatsApp flotante.
 - **Don't** poner Azul Cielo sobre fondo claro ni Azul Hondo como acento sobre la placa oscura.
-- **Don't** mostrar los controles del minijuego ni capturar gestos en el celular.
+- **Don't** convertir el logo en un juego ni sumarle controles: el isotipo del hero es solo el logo.
 - **Don't** usar formularios de contacto ni selectores tipo chip. El contacto se hace con botones directos (WhatsApp, llamar, correo).
 - **Don't** mostrar reseñas, fotos o cifras de relleno para simular prueba social.

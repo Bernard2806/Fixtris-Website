@@ -1,6 +1,6 @@
 {
   "schemaVersion": 2,
-  "generatedAt": "2026-11-08T04:28:30+00:00",
+  "generatedAt": "2026-11-08T04:31:59+00:00",
   "title": "Design System: Fixtris Computer",
   "extensions": {
     "colorMeta": {
@@ -396,21 +396,6 @@
         "name": "menu",
         "value": "0.2s ease",
         "purpose": "Apertura del menú de celular (opacidad y desplazamiento de 0.75rem)."
-      },
-      {
-        "name": "rebote-llave",
-        "value": "0.7s cubic-bezier(0.3, 1.4, 0.5, 1)",
-        "purpose": "Giro de la llave del chip jugable."
-      },
-      {
-        "name": "limpiar-linea",
-        "value": "0.6s ease-in",
-        "purpose": "Celdas que destellan y se encogen al completar la línea."
-      },
-      {
-        "name": "sacudir",
-        "value": "0.4s",
-        "purpose": "El chip se sacude cuando la pieza no encaja."
       }
     ],
     "breakpoints": [
@@ -503,7 +488,7 @@
   ],
   "narrative": {
     "northStar": "La placa a la vista",
-    "overview": "Fixtris se ve como un equipo abierto sobre la mesa del técnico: fondo oscuro de placa, pistas azules que conectan las partes, bloques que encajan en una grilla exacta y una sola pieza ámbar, la que arregla. Todo sale del logo, que es un chip con una pieza en T que cae para completar la línea. El sitio repite esa idea en el damero de servicios, en la pista de circuito que une los pasos, en el punto en bloque del título y en el minijuego del hero.\n\nEl carácter es **lúdico y preciso, cercano y directo, nocturno y técnico, claro y honesto**. Lo lúdico vive en los detalles: la pieza que se puede encajar, el bloque al final del título. La precisión la pone la grilla. Lo nocturno es el estado por defecto, y los tramos claros (servicios, preguntas) son como abrir la tapa y prender la luz para leer con calma. La honestidad es visual: los precios se leen de un vistazo, en la misma línea que el servicio, sin letra chica ni efectos que distraigan.\n\nLa densidad es media y pensada para el pulgar. El sitio se lee sobre todo en celulares de 360 a 412 px, así que cada patrón de escritorio tiene su versión de una columna resuelta a propósito, no solo apilada.",
+    "overview": "Fixtris se ve como un equipo abierto sobre la mesa del técnico: fondo oscuro de placa, pistas azules que conectan las partes, bloques que encajan en una grilla exacta y una sola pieza ámbar, la que arregla. Todo sale del logo, que es un chip con una pieza en T que cae para completar la línea. El sitio repite esa idea en el damero de servicios, en la pista de circuito que une los pasos, en el punto en bloque del título y en el isotipo grande del hero.\n\nEl carácter es **lúdico y preciso, cercano y directo, nocturno y técnico, claro y honesto**. Lo lúdico vive en los detalles: la pieza que se puede encajar, el bloque al final del título. La precisión la pone la grilla. Lo nocturno es el estado por defecto, y los tramos claros (servicios, preguntas) son como abrir la tapa y prender la luz para leer con calma. La honestidad es visual: los precios se leen de un vistazo, en la misma línea que el servicio, sin letra chica ni efectos que distraigan.\n\nLa densidad es media y pensada para el pulgar. El sitio se lee sobre todo en celulares de 360 a 412 px, así que cada patrón de escritorio tiene su versión de una columna resuelta a propósito, no solo apilada.",
     "keyCharacteristics": [
       "Oscuro por defecto (`color-scheme: dark`), con dos secciones claras que marcan el ritmo.",
       "Un azul de marca con su escala completa y un ámbar reservado para actuar.",
@@ -575,7 +560,7 @@
       "**Don't** dibujar íconos SVG a mano. Lo único dibujado a mano son los logos de Fixtris.",
       "**Don't** usar radios mayores a 10 px en componentes comunes ni formas de pastilla, salvo el WhatsApp flotante.",
       "**Don't** poner Azul Cielo sobre fondo claro ni Azul Hondo como acento sobre la placa oscura.",
-      "**Don't** mostrar los controles del minijuego ni capturar gestos en el celular.",
+      "**Don't** convertir el logo en un juego ni sumarle controles: el isotipo del hero es solo el logo.",
       "**Don't** usar formularios de contacto ni selectores tipo chip. El contacto se hace con botones directos (WhatsApp, llamar, correo).",
       "**Don't** mostrar reseñas, fotos o cifras de relleno para simular prueba social."
     ]
