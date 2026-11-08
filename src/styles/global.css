@@ -126,7 +126,7 @@ svg {
 :focus-visible {
 	outline: 3px solid var(--azul-300);
 	outline-offset: 3px;
-	border-radius: 4px;
+	border-radius: var(--radio);
 }
 
 .tema-claro :focus-visible {
