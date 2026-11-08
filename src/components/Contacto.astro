@@ -3,6 +3,8 @@ import Icono from './Icono.astro';
 import { sitio, enlaceWhatsapp } from '../data/site';
 
 const telefono = `+${sitio.whatsapp}`;
+// Si el correo no entra en una línea, que corte antes de la @ y no en el medio de una palabra
+const [usuarioCorreo, dominioCorreo] = sitio.email.split('@');
 ---
 
 <section class="contacto seccion tema-oscuro" id="contacto" aria-labelledby="titulo-contacto">
@@ -48,7 +50,7 @@ const telefono = `+${sitio.whatsapp}`;
 				</span>
 				<span class="canal-texto">
 					<strong>Correo</strong>
-					<span>{sitio.email}</span>
+					<span>{usuarioCorreo}<wbr />@{dominioCorreo}</span>
 				</span>
 			</a>
 		</div>
@@ -174,7 +176,7 @@ const telefono = `+${sitio.whatsapp}`;
 	}
 
 	.canal-principal .canal-texto strong {
-		font-size: 1.3rem;
+		font-size: 1.25rem;
 	}
 
 	.canal-principal .canal-texto span {
@@ -189,7 +191,7 @@ const telefono = `+${sitio.whatsapp}`;
 			row-gap: 2rem;
 		}
 		.canal-principal .canal-texto strong {
-			font-size: 1.15rem;
+			font-size: 1.125rem;
 		}
 	}
 </style>
