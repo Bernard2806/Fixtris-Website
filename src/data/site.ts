@@ -26,34 +26,41 @@ export function enlaceWhatsapp(texto = 'Hola Fixtris, quiero consultar por una r
 
 // Cada fila del grid suma 6 columnas: cada fila es una línea completa.
 // Si agregás o sacás un servicio, revisá que los anchos de cada fila sigan sumando 6.
+// `precios` es la categoría de la lista de precios a la que lleva "Ver precios" (tiene que existir).
+// Sin `precios`, el enlace lleva al comienzo de la sección de precios.
 export const servicios = [
 	// fila 1
 	{
 		titulo: 'Diagnóstico',
 		texto: 'Encontramos qué falla y te pasamos el presupuesto antes de tocar nada.',
 		ancho: 2,
+		precios: 'Todos los equipos',
 	},
 	{
 		titulo: 'Notebooks',
 		texto: 'Pantallas, teclados, bisagras y baterías. Equipos que no encienden o se apagan solos.',
 		ancho: 4,
+		precios: 'Notebooks y netbooks',
 	},
 	// fila 2
 	{
 		titulo: 'Consolas',
 		texto: 'PlayStation, Xbox y Nintendo: joysticks con drift, lectoras, fuentes y consolas que se recalientan.',
 		ancho: 4,
+		precios: 'Consolas',
 	},
 	{
 		titulo: 'PC de escritorio',
 		texto: 'Fuentes, placas de video, memorias y discos. Pantallazos azules y reinicios.',
 		ancho: 2,
+		precios: 'PC de escritorio',
 	},
 	// fila 3
 	{
 		titulo: 'Netbooks del gobierno',
 		texto: 'Desbloqueamos netbooks de Conectar Igualdad y Juana Manso que quedaron trabadas, y las dejamos listas para usar.',
 		ancho: 3,
+		precios: 'Notebooks y netbooks',
 	},
 	{
 		titulo: 'Limpieza y temperatura',
@@ -65,22 +72,26 @@ export const servicios = [
 		titulo: 'Mejoras',
 		texto: 'Discos SSD, más memoria RAM y placas nuevas para que tu equipo rinda más sin cambiarlo entero.',
 		ancho: 3,
+		precios: 'Mejoras',
 	},
 	{
 		titulo: 'Sistema y programas',
 		texto: 'Windows o Linux, drivers, virus y programas que no andan.',
 		ancho: 3,
+		precios: 'Sistema y programas',
 	},
 	// fila 5
 	{
 		titulo: 'Recuperación de datos',
 		texto: 'Intentamos rescatar fotos y archivos de discos dañados o borrados por error. Si no se recuperan, no se cobra.',
 		ancho: 3,
+		precios: 'Recuperación de datos',
 	},
 	{
 		titulo: 'Armado a medida',
 		texto: 'Te ayudamos a elegir las piezas y armamos la PC para lo que la vas a usar.',
 		ancho: 3,
+		precios: 'PC de escritorio',
 	},
 ];
 
