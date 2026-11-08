@@ -5,13 +5,16 @@ import { anclaPrecios } from '../lib/ancla';
 import Icono from './Icono.astro';
 
 const cotizacion = await obtenerCotizacion();
-// Una categoría con un solo precio (el diagnóstico) no se pliega: se ve siempre
-const grupos = precios.map((g) => ({
-	...g,
-	id: anclaPrecios(g.categoria),
-	fija: g.items.length === 1,
-	items: g.items.map((p) => ({ ...p, pesos: formatearPesos(aPesos(p.usd, cotizacion)) })),
-}));
+// Una categoría con un solo precio (el diagnóstico) no se pliega: se ve siempre.
+// Una categoría vacía no se muestra.
+const grupos = precios
+	.filter((g) => g.items.length > 0)
+	.map((g) => ({
+		...g,
+		id: anclaPrecios(g.categoria),
+		fija: g.items.length === 1,
+		items: g.items.map((p) => ({ ...p, pesos: formatearPesos(aPesos(p.usd, cotizacion)) })),
+	}));
 const actualizado = cotizacion.fecha.toLocaleDateString('es-AR', {
 	timeZone: 'America/Argentina/Buenos_Aires',
 	day: '2-digit',
@@ -127,13 +130,28 @@ const actualizado = cotizacion.fecha.toLocaleDateString('es-AR', {
 		background: var(--sup-alt);
 	}
 
+	/* Toda la cabecera de la tarjeta se toca, no solo el título: el relleno vive en el summary,
+	   que ocupa el ancho completo de la tarjeta (Regla del Pulgar, al menos 3rem) */
+	details.categoria {
+		padding-top: 0;
+	}
+
 	.categoria summary {
 		display: flex;
 		align-items: center;
 		justify-content: space-between;
 		gap: 1rem;
+		min-height: 3rem;
+		margin-inline: -1.25rem;
+		padding: 1.25rem;
+		border-radius: 10px;
 		cursor: pointer;
 		list-style: none;
+		-webkit-tap-highlight-color: transparent;
+	}
+
+	.categoria[open] summary {
+		padding-bottom: 0;
 	}
 
 	.categoria summary::-webkit-details-marker {
@@ -170,7 +188,7 @@ const actualizado = cotizacion.fecha.toLocaleDateString('es-AR', {
 	}
 
 	details.categoria:not([open]) {
-		padding-bottom: 1.25rem;
+		padding-bottom: 0;
 	}
 
 	.aclaracion {
