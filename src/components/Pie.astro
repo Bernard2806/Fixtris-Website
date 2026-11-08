@@ -1,43 +1,74 @@
 ---
-import { sitio } from '../data/site';
+import { sitio, otroEmprendimiento as e } from '../data/site';
 import { ruta } from '../lib/ruta';
+import Icono from './Icono.astro';
+
 const anio = new Date().getFullYear();
 ---
 
+{/* El contacto está justo arriba: el pie cierra con la marca, sin repetirlo */}
 <footer class="pie tema-oscuro">
-	<div class="contenedor fila">
-		<img src={ruta('brand/logo-horizontal-oscuro.svg')} alt="Fixtris Computer" width="170" height="50" loading="lazy" />
-		<p>Reparación de computadoras, notebooks, consolas y hardware.</p>
-		<p class="legal">© {anio} {sitio.nombre}</p>
+	<div class="contenedor">
+		<div class="marca-pie">
+			<img src={ruta('brand/logo-horizontal-oscuro.svg')} alt="Fixtris Computer" width="170" height="50" loading="lazy" />
+			<p>Reparación de computadoras, notebooks, consolas y hardware.</p>
+		</div>
+		<div class="secundario">
+			<p>
+				{e.titulo}{' '}
+				<a href={e.url} target="_blank" rel="noopener">
+					Conocé {e.nombre}
+					<Icono nombre="arrow-top-right-on-square" />
+					<span class="solo-lectores">(se abre en otra pestaña)</span>
+				</a>
+			</p>
+			<p>© {anio} {sitio.nombre}</p>
+		</div>
 	</div>
 </footer>
 
 <style>
 	.pie {
 		border-top: 1px solid var(--linea);
-		padding-block: 2.5rem;
+		padding-block: 2.5rem calc(2.5rem + env(safe-area-inset-bottom));
 		background: var(--sup-base);
 	}
 
-	.fila {
+	.marca-pie {
 		display: flex;
 		flex-wrap: wrap;
 		align-items: center;
 		gap: 1rem 2rem;
 	}
 
-	.fila p {
+	.secundario {
+		display: flex;
+		flex-wrap: wrap;
+		align-items: center;
+		justify-content: space-between;
+		gap: 0.5rem 2rem;
+		margin-top: 1.75rem;
+		padding-top: 1.25rem;
+		border-top: 1px solid var(--linea);
+	}
+
+	.pie p {
 		color: var(--suave);
 		font-size: 0.9375rem;
 	}
 
-	.legal {
-		margin-left: auto;
+	/* Chico a la vista, tocable en 3rem */
+	.secundario a {
+		display: inline-flex;
+		align-items: center;
+		gap: 0.35rem;
+		min-height: 3rem;
+		font: 700 1rem/1.2 var(--fuente-titulos);
+		text-decoration-thickness: 2px;
+		text-underline-offset: 0.25em;
 	}
 
-	@media (max-width: 640px) {
-		.legal {
-			margin-left: 0;
-		}
+	.secundario a:hover {
+		text-decoration-color: transparent;
 	}
 </style>

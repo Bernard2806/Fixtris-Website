@@ -12,13 +12,11 @@ export const sitio = {
 	zona: 'Chivilcoy, Buenos Aires',
 };
 
-// Otro emprendimiento: sección "MateLogic", por si alguien busca software a medida.
+// Otro emprendimiento: una mención en el pie, por si alguien busca software a medida.
 export const otroEmprendimiento = {
 	nombre: 'MateLogic',
 	url: 'https://mate-logic.tech/',
 	titulo: '¿Necesitás software a medida?',
-	texto:
-		'También hacemos software. En MateLogic desarrollamos páginas web, apps para Android e iOS y programas de escritorio, para negocios de Chivilcoy y de cualquier lado.',
 };
 
 export function enlaceWhatsapp(texto = 'Hola Fixtris, quiero consultar por una reparación.') {
