@@ -1,0 +1,588 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-11-08T03:39:07+00:00",
+  "title": "Design System: Fixtris Computer",
+  "extensions": {
+    "colorMeta": {
+      "azul-pista": {
+        "role": "primary",
+        "displayName": "Azul Pista",
+        "canonical": "#0aa3d3",
+        "tonalRamp": [
+          "#00212f",
+          "#01394c",
+          "#00506a",
+          "#016a8b",
+          "#0b86ae",
+          "#0aa3d3",
+          "#5acfff",
+          "#cfefff"
+        ]
+      },
+      "azul-brillo": {
+        "role": "primary",
+        "displayName": "Azul Brillo",
+        "canonical": "#06bbf1",
+        "tonalRamp": [
+          "#00212f",
+          "#01394c",
+          "#00506a",
+          "#016a8b",
+          "#0b86ae",
+          "#0aa3d3",
+          "#5acfff",
+          "#cfefff"
+        ]
+      },
+      "azul-cielo": {
+        "role": "primary",
+        "displayName": "Azul Cielo",
+        "canonical": "#5acfff",
+        "tonalRamp": [
+          "#00212f",
+          "#01394c",
+          "#00506a",
+          "#016a8b",
+          "#0b86ae",
+          "#0aa3d3",
+          "#5acfff",
+          "#cfefff"
+        ]
+      },
+      "azul-hielo": {
+        "role": "primary",
+        "displayName": "Azul Hielo",
+        "canonical": "#cfefff",
+        "tonalRamp": [
+          "#00212f",
+          "#01394c",
+          "#00506a",
+          "#016a8b",
+          "#0b86ae",
+          "#0aa3d3",
+          "#5acfff",
+          "#cfefff"
+        ]
+      },
+      "azul-hondo": {
+        "role": "primary",
+        "displayName": "Azul Hondo",
+        "canonical": "#016a8b",
+        "tonalRamp": [
+          "#00212f",
+          "#01394c",
+          "#00506a",
+          "#016a8b",
+          "#0b86ae",
+          "#0aa3d3",
+          "#5acfff",
+          "#cfefff"
+        ]
+      },
+      "azul-abismo": {
+        "role": "primary",
+        "displayName": "Azul Abismo",
+        "canonical": "#01394c",
+        "tonalRamp": [
+          "#00212f",
+          "#01394c",
+          "#00506a",
+          "#016a8b",
+          "#0b86ae",
+          "#0aa3d3",
+          "#5acfff",
+          "#cfefff"
+        ]
+      },
+      "azul-noche": {
+        "role": "primary",
+        "displayName": "Azul Noche",
+        "canonical": "#00212f",
+        "tonalRamp": [
+          "#00212f",
+          "#01394c",
+          "#00506a",
+          "#016a8b",
+          "#0b86ae",
+          "#0aa3d3",
+          "#5acfff",
+          "#cfefff"
+        ]
+      },
+      "ambar-pieza": {
+        "role": "secondary",
+        "displayName": "Ámbar Pieza",
+        "canonical": "#ffb020",
+        "tonalRamp": [
+          "#110902",
+          "#2c2317",
+          "#523e22",
+          "#7c5a27",
+          "#a97829",
+          "#d89627",
+          "#ffb839",
+          "#ffe288"
+        ]
+      },
+      "ambar-claro": {
+        "role": "secondary",
+        "displayName": "Ámbar Claro",
+        "canonical": "#ffc762",
+        "tonalRamp": [
+          "#100a03",
+          "#2a241a",
+          "#4b402f",
+          "#725e3c",
+          "#9b7d49",
+          "#c79e54",
+          "#f5bf60",
+          "#ffe693"
+        ]
+      },
+      "ambar-tostado": {
+        "role": "secondary",
+        "displayName": "Ámbar Tostado",
+        "canonical": "#f19100",
+        "tonalRamp": [
+          "#120902",
+          "#32210f",
+          "#5b3914",
+          "#885416",
+          "#b76f13",
+          "#e88c04",
+          "#ffb55d",
+          "#ffdf9e"
+        ]
+      },
+      "placa-base": {
+        "role": "neutral",
+        "displayName": "Placa Base",
+        "canonical": "#041118",
+        "tonalRamp": [
+          "#020d13",
+          "#1b272e",
+          "#394449",
+          "#5b6367",
+          "#7e8386",
+          "#a3a5a7",
+          "#c7c9cb",
+          "#eceff0"
+        ]
+      },
+      "placa-alt": {
+        "role": "neutral",
+        "displayName": "Placa Alt",
+        "canonical": "#081b23",
+        "tonalRamp": [
+          "#010d14",
+          "#17282f",
+          "#36444b",
+          "#586369",
+          "#7c8487",
+          "#a2a6a8",
+          "#c6cacb",
+          "#eceff1"
+        ]
+      },
+      "placa-tarjeta": {
+        "role": "neutral",
+        "displayName": "Placa Tarjeta",
+        "canonical": "#122730",
+        "tonalRamp": [
+          "#010d14",
+          "#132831",
+          "#34454d",
+          "#56646a",
+          "#7a8489",
+          "#a0a6a9",
+          "#c6cacb",
+          "#ebeff1"
+        ]
+      },
+      "placa-borde": {
+        "role": "neutral",
+        "displayName": "Placa Borde",
+        "canonical": "#22363f",
+        "tonalRamp": [
+          "#030d12",
+          "#162830",
+          "#33454e",
+          "#55646b",
+          "#79848a",
+          "#9ea6aa",
+          "#c6cacc",
+          "#ebeff1"
+        ]
+      },
+      "barra-scroll": {
+        "role": "neutral",
+        "displayName": "Barra con scroll",
+        "canonical": "#01070a",
+        "tonalRamp": [
+          "#040d10",
+          "#1e272a",
+          "#3c4346",
+          "#5d6264",
+          "#808384",
+          "#a3a5a6",
+          "#c7c9ca",
+          "#edeff0"
+        ]
+      },
+      "texto-placa": {
+        "role": "neutral",
+        "displayName": "Texto Placa",
+        "canonical": "#d5e2e7",
+        "tonalRamp": [
+          "#0a0b0c",
+          "#242526",
+          "#414243",
+          "#5e6263",
+          "#7d8386",
+          "#9ea7aa",
+          "#c0cbd0",
+          "#e5f1f6"
+        ]
+      },
+      "suave-placa": {
+        "role": "neutral",
+        "displayName": "Suave Placa",
+        "canonical": "#9aaeb6",
+        "tonalRamp": [
+          "#0a0b0c",
+          "#222627",
+          "#3c4346",
+          "#586368",
+          "#76858b",
+          "#95a9b0",
+          "#bbccd3",
+          "#e3f1f7"
+        ]
+      },
+      "papel": {
+        "role": "neutral",
+        "displayName": "Papel",
+        "canonical": "#f1f6f8",
+        "tonalRamp": [
+          "#0b0b0b",
+          "#252525",
+          "#414242",
+          "#606162",
+          "#818383",
+          "#a3a5a7",
+          "#c6cacb",
+          "#ebeff1"
+        ]
+      },
+      "papel-borde": {
+        "role": "neutral",
+        "displayName": "Papel Borde",
+        "canonical": "#cddae0",
+        "tonalRamp": [
+          "#0a0b0c",
+          "#242526",
+          "#404243",
+          "#5e6264",
+          "#7d8487",
+          "#9ea7ab",
+          "#bfcbd1",
+          "#e5f1f6"
+        ]
+      },
+      "texto-papel": {
+        "role": "neutral",
+        "displayName": "Texto Papel",
+        "canonical": "#122730",
+        "tonalRamp": [
+          "#010d14",
+          "#132831",
+          "#34454d",
+          "#56646a",
+          "#7a8489",
+          "#a0a6a9",
+          "#c6cacb",
+          "#ebeff1"
+        ]
+      },
+      "suave-papel": {
+        "role": "neutral",
+        "displayName": "Suave Papel",
+        "canonical": "#4a585e",
+        "tonalRamp": [
+          "#070c0e",
+          "#1e272a",
+          "#384449",
+          "#566469",
+          "#798489",
+          "#9ea7aa",
+          "#c4cacd",
+          "#eceff0"
+        ]
+      },
+      "blanco": {
+        "role": "neutral",
+        "displayName": "Blanco",
+        "canonical": "#ffffff",
+        "tonalRamp": [
+          "#0b0b0b",
+          "#252525",
+          "#424242",
+          "#616161",
+          "#828282",
+          "#a5a5a5",
+          "#c9c9c9",
+          "#eeeeee"
+        ]
+      }
+    },
+    "typographyMeta": {
+      "display": {
+        "displayName": "Display",
+        "purpose": "Solo el título del hero, que cierra con un bloque Azul Brillo."
+      },
+      "headline": {
+        "displayName": "Headline",
+        "purpose": "Título de cada sección."
+      },
+      "title": {
+        "displayName": "Title",
+        "purpose": "Títulos de pieza, tarjeta, forma de pago y pregunta."
+      },
+      "numero": {
+        "displayName": "Número",
+        "purpose": "Números de los pasos; 2.25rem en celular."
+      },
+      "body": {
+        "displayName": "Body",
+        "purpose": "Texto corrido."
+      },
+      "intro": {
+        "displayName": "Intro",
+        "purpose": "Bajada bajo el título de cada sección, en tono suave."
+      },
+      "label": {
+        "displayName": "Label",
+        "purpose": "Botones, nombres de servicio y montos de precio."
+      },
+      "nota": {
+        "displayName": "Nota",
+        "purpose": "Aclaraciones, detalles de precio y pie."
+      }
+    },
+    "shadows": [
+      {
+        "name": "barra-flotando",
+        "value": "0 8px 24px rgb(0 0 0 / 0.35)",
+        "purpose": "Barra fija cuando la página ya bajó."
+      },
+      {
+        "name": "boton-flotando",
+        "value": "0 6px 20px rgb(0 0 0 / 0.35)",
+        "purpose": "WhatsApp flotante en celular."
+      },
+      {
+        "name": "anillo-marco",
+        "value": "0 0 0 6px rgb(10 163 211 / 0.18)",
+        "purpose": "Aro del círculo del isotipo de MateLogic; borde, no elevación."
+      }
+    ],
+    "motion": [
+      {
+        "name": "color",
+        "value": "0.15s",
+        "purpose": "Cambios de fondo, borde y color en hover de botones y canales."
+      },
+      {
+        "name": "estado",
+        "value": "0.25s ease",
+        "purpose": "Barra al bajar, giro del signo +/×, entrada del WhatsApp flotante."
+      },
+      {
+        "name": "menu",
+        "value": "0.2s ease",
+        "purpose": "Apertura del menú de celular (opacidad y desplazamiento de 0.75rem)."
+      },
+      {
+        "name": "rebote-llave",
+        "value": "0.7s cubic-bezier(0.3, 1.4, 0.5, 1)",
+        "purpose": "Giro de la llave del chip jugable."
+      },
+      {
+        "name": "limpiar-linea",
+        "value": "0.6s ease-in",
+        "purpose": "Celdas que destellan y se encogen al completar la línea."
+      },
+      {
+        "name": "sacudir",
+        "value": "0.4s",
+        "purpose": "El chip se sacude cuando la pieza no encaja."
+      }
+    ],
+    "breakpoints": [
+      {
+        "name": "menu-hamburguesa",
+        "value": "1080px"
+      },
+      {
+        "name": "hero-una-columna",
+        "value": "960px"
+      },
+      {
+        "name": "una-columna",
+        "value": "860px"
+      },
+      {
+        "name": "chico",
+        "value": "640px"
+      },
+      {
+        "name": "minimo",
+        "value": "480px"
+      }
+    ]
+  },
+  "components": [
+    {
+      "name": "Botón de acción",
+      "kind": "button",
+      "refersTo": "button-accion",
+      "description": "La pieza ámbar: única acción principal, casi siempre escribir por WhatsApp.",
+      "html": "<a class=\"ds-boton-accion\" href=\"#\"><svg viewBox=\"0 0 24 24\" width=\"24\" height=\"24\" fill=\"currentColor\" aria-hidden=\"true\"><path d=\"M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z\"/></svg>Escribinos por WhatsApp</a>",
+      "css": ".ds-boton-accion { display: inline-flex; align-items: center; justify-content: center; gap: 0.6rem; min-height: 3rem; padding: 0.7rem 1.4rem; border: 2px solid transparent; border-radius: 6px; background: #ffb020; color: #00212f; font-family: Quicksand, system-ui, sans-serif; font-weight: 700; font-size: 1.0625rem; line-height: 1.2; text-decoration: none; transition: background-color 0.15s; } .ds-boton-accion:hover { background: #ffc762; } .ds-boton-accion:focus-visible { outline: 3px solid #5acfff; outline-offset: 3px; } .ds-boton-accion svg { width: 24px; height: 24px; flex: none; }"
+    },
+    {
+      "name": "Botón secundario",
+      "kind": "button",
+      "refersTo": "button-secundario",
+      "description": "Contorno Azul Cielo sobre la placa; acompaña al botón de acción.",
+      "html": "<div class=\"ds-fondo\"><a class=\"ds-boton-secundario\" href=\"#\">Ver servicios</a></div>",
+      "css": ".ds-fondo { padding: 1.5rem; background: #041118; } .ds-boton-secundario { display: inline-flex; align-items: center; justify-content: center; min-height: 3rem; padding: 0.7rem 1.4rem; border: 2px solid #5acfff; border-radius: 6px; background: transparent; color: #ffffff; font-family: Quicksand, system-ui, sans-serif; font-weight: 700; font-size: 1.0625rem; line-height: 1.2; text-decoration: none; transition: background-color 0.15s; } .ds-boton-secundario:hover { background: color-mix(in oklab, #5acfff 14%, transparent); } .ds-boton-secundario:focus-visible { outline: 3px solid #5acfff; outline-offset: 3px; }"
+    },
+    {
+      "name": "Barra de navegación",
+      "kind": "nav",
+      "refersTo": "nav-link",
+      "description": "Barra fija en su estado con scroll: más oscura, con borde y sombra.",
+      "html": "<header class=\"ds-barra\"><strong class=\"ds-marca\">Fixtris</strong><nav><a href=\"#\">Servicios</a><a href=\"#\">Precios</a><a href=\"#\">Preguntas</a></nav><a class=\"ds-barra-boton\" href=\"#\">Escribinos</a></header>",
+      "css": ".ds-barra { display: flex; align-items: center; justify-content: space-between; gap: 2rem; min-height: 4.5rem; padding: 0 1.5rem; background: #01070a; border-bottom: 1px solid #22363f; box-shadow: 0 8px 24px rgb(0 0 0 / 0.35); } .ds-marca { font-family: Quicksand, system-ui, sans-serif; font-weight: 700; font-size: 1.4rem; color: #ffffff; } .ds-barra nav { display: flex; gap: 1.75rem; } .ds-barra nav a { color: #d5e2e7; text-decoration: none; font-family: Quicksand, system-ui, sans-serif; font-weight: 500; font-size: 1rem; padding-block: 0.5rem; } .ds-barra nav a:hover { color: #5acfff; } .ds-barra a:focus-visible { outline: 3px solid #5acfff; outline-offset: 3px; border-radius: 4px; } .ds-barra-boton { display: inline-flex; align-items: center; min-height: 2.6rem; padding: 0.5rem 1rem; border-radius: 6px; background: #ffb020; color: #00212f; font-family: Quicksand, system-ui, sans-serif; font-weight: 700; font-size: 0.9375rem; text-decoration: none; } .ds-barra-boton:hover { background: #ffc762; }"
+    },
+    {
+      "name": "Damero de servicios",
+      "kind": "card",
+      "refersTo": "pieza",
+      "description": "Piezas blancas y Azul Hondo en damero sobre una junta Azul Noche de 6 px; cada fila suma 6 columnas.",
+      "html": "<ul class=\"ds-pozo\"><li class=\"ds-pieza\" style=\"--ancho:2\"><h3>Diagnóstico</h3><p>Encontramos qué falla y te pasamos el presupuesto antes de tocar nada.</p></li><li class=\"ds-pieza ds-pieza-honda\" style=\"--ancho:4\"><h3>Notebooks</h3><p>Pantallas, teclados, bisagras y baterías.</p></li><li class=\"ds-pieza ds-pieza-honda\" style=\"--ancho:4\"><h3>Consolas</h3><p>Joysticks con drift, lectoras y fuentes.</p></li><li class=\"ds-pieza\" style=\"--ancho:2\"><h3>PC de escritorio</h3><p>Fuentes, placas de video y discos.</p></li></ul>",
+      "css": ".ds-pozo { display: grid; grid-template-columns: repeat(6, minmax(0, 1fr)); gap: 6px; margin: 0; padding: 6px; list-style: none; background: #00212f; border-radius: 10px; } .ds-pieza { grid-column: span var(--ancho); display: grid; align-content: start; gap: 0.5rem; min-height: 9rem; padding: 1.25rem; border-radius: 6px; background: #ffffff; } .ds-pieza h3 { margin: 0; font-family: Quicksand, system-ui, sans-serif; font-weight: 700; font-size: 1.25rem; line-height: 1.25; color: #00212f; } .ds-pieza p { margin: 0; color: #4a585e; font-size: 1rem; line-height: 1.6; } .ds-pieza-honda { background: #016a8b; } .ds-pieza-honda h3 { color: #ffffff; } .ds-pieza-honda p { color: #cfefff; }"
+    },
+    {
+      "name": "Categoría de precios",
+      "kind": "card",
+      "refersTo": "tarjeta",
+      "description": "Tarjeta desplegable con servicio y monto en la misma línea; el + gira hasta ser una ×.",
+      "html": "<details class=\"ds-categoria\" open><summary><span class=\"ds-cabeza\"><h3>Consolas</h3><span class=\"ds-cantidad\">2 servicios</span></span><span class=\"ds-signo\"><svg viewBox=\"0 0 24 24\" width=\"24\" height=\"24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.5\" aria-hidden=\"true\"><path stroke-linecap=\"round\" stroke-linejoin=\"round\" d=\"M12 4.5v15m7.5-7.5h-15\"/></svg></span></summary><ul><li class=\"ds-precio\"><span class=\"ds-servicio\">Arreglo de drift de joystick</span><span class=\"ds-monto\">$15.000</span><p>Por cada stick.</p></li><li class=\"ds-precio\"><span class=\"ds-servicio\">Reparación o cambio de lectora</span><span class=\"ds-monto\">$25.000</span></li></ul></details>",
+      "css": ".ds-categoria { padding: 1.25rem 1.25rem 0.5rem; border: 1px solid #22363f; border-radius: 10px; background: #081b23; color: #d5e2e7; } .ds-categoria summary { display: flex; align-items: center; justify-content: space-between; gap: 1rem; cursor: pointer; list-style: none; } .ds-categoria summary::-webkit-details-marker { display: none; } .ds-categoria summary:focus-visible { outline: 3px solid #5acfff; outline-offset: 3px; border-radius: 4px; } .ds-cabeza { display: flex; flex-wrap: wrap; align-items: baseline; gap: 0.2rem 0.75rem; } .ds-categoria h3 { margin: 0; font-family: Quicksand, system-ui, sans-serif; font-weight: 700; font-size: 1.25rem; color: #5acfff; } .ds-cantidad { color: #9aaeb6; font-size: 0.9375rem; } .ds-signo { display: grid; color: #5acfff; transition: transform 0.25s ease; } .ds-signo svg { width: 24px; height: 24px; } .ds-categoria[open] .ds-signo { transform: rotate(45deg); } .ds-categoria ul { margin: 0.5rem 0 0; padding: 0; list-style: none; } .ds-precio { display: grid; grid-template-columns: minmax(0, 1fr) auto; align-items: baseline; column-gap: 1rem; padding-block: 0.85rem; } .ds-precio + .ds-precio { border-top: 1px solid #22363f; } .ds-servicio { font-family: Quicksand, system-ui, sans-serif; font-weight: 700; font-size: 1.0625rem; line-height: 1.3; color: #ffffff; } .ds-monto { font-family: Quicksand, system-ui, sans-serif; font-weight: 700; font-size: 1.25rem; color: #ffffff; white-space: nowrap; } .ds-precio p { grid-column: 1 / -1; margin: 0.3rem 0 0; color: #9aaeb6; font-size: 0.9375rem; }"
+    },
+    {
+      "name": "Canales de contacto",
+      "kind": "custom",
+      "refersTo": "canal-principal",
+      "description": "Filas grandes con recuadro de ícono; WhatsApp es el canal principal, en ámbar.",
+      "html": "<div class=\"ds-canales\"><a class=\"ds-canal ds-canal-principal\" href=\"#\"><span class=\"ds-canal-icono\"><svg viewBox=\"0 0 24 24\" width=\"24\" height=\"24\" fill=\"currentColor\" aria-hidden=\"true\"><path d=\"M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z\"/></svg></span><span class=\"ds-canal-texto\"><strong>WhatsApp</strong><span>+54 9 2346 40-9771</span></span></a><a class=\"ds-canal\" href=\"#\"><span class=\"ds-canal-icono\"><svg viewBox=\"0 0 24 24\" width=\"24\" height=\"24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.5\" aria-hidden=\"true\"><path stroke-linecap=\"round\" stroke-linejoin=\"round\" d=\"M2.25 6.75c0 8.284 6.716 15 15 15h2.25a2.25 2.25 0 0 0 2.25-2.25v-1.372c0-.516-.351-.966-.852-1.091l-4.423-1.106c-.44-.11-.902.055-1.173.417l-.97 1.293c-.282.376-.769.542-1.21.38a12.035 12.035 0 0 1-7.143-7.143c-.162-.441.004-.928.38-1.21l1.293-.97c.363-.271.527-.734.417-1.173L6.963 3.102a1.125 1.125 0 0 0-1.091-.852H4.5A2.25 2.25 0 0 0 2.25 4.5v2.25Z\"/></svg></span><span class=\"ds-canal-texto\"><strong>Llamar</strong><span>2346 40-9771</span></span></a></div>",
+      "css": ".ds-canales { display: grid; gap: 0.75rem; padding: 1.5rem; background: #041118; } .ds-canal { display: flex; align-items: center; gap: 1rem; min-height: 4.5rem; padding: 0.9rem 1.25rem; border: 1px solid #22363f; border-radius: 10px; background: #081b23; color: #ffffff; text-decoration: none; transition: background-color 0.15s, border-color 0.15s; } .ds-canal:hover { border-color: #0b86ae; background: #122730; } .ds-canal:focus-visible { outline: 3px solid #5acfff; outline-offset: 3px; } .ds-canal-icono { display: grid; place-items: center; flex: none; width: 2.75rem; height: 2.75rem; border-radius: 8px; background: #00212f; color: #5acfff; } .ds-canal-icono svg { width: 24px; height: 24px; } .ds-canal-texto { display: grid; gap: 0.1rem; } .ds-canal-texto strong { font-family: Quicksand, system-ui, sans-serif; font-weight: 700; font-size: 1.125rem; } .ds-canal-texto span { color: #9aaeb6; font-size: 0.9375rem; } .ds-canal-principal { min-height: 5.5rem; border-color: #ffb020; background: #ffb020; color: #00212f; } .ds-canal-principal:hover { border-color: #ffc762; background: #ffc762; } .ds-canal-principal .ds-canal-icono { color: #ffc762; } .ds-canal-principal .ds-canal-texto strong { font-size: 1.3rem; } .ds-canal-principal .ds-canal-texto span { color: #01394c; }"
+    },
+    {
+      "name": "Pista de pasos",
+      "kind": "custom",
+      "description": "Pista de circuito Azul Pista que une los pasos; el último nodo es ámbar.",
+      "html": "<ol class=\"ds-pasos\"><li><span class=\"ds-nodo\"></span><span class=\"ds-numero\">1</span><h3>Nos contás qué pasa</h3></li><li><span class=\"ds-nodo\"></span><span class=\"ds-numero\">2</span><h3>Diagnóstico y presupuesto</h3></li><li><span class=\"ds-nodo\"></span><span class=\"ds-numero\">3</span><h3>Reparación</h3></li><li><span class=\"ds-nodo\"></span><span class=\"ds-numero\">4</span><h3>Retirás tu compu</h3></li></ol>",
+      "css": ".ds-pasos { position: relative; display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 1.5rem; margin: 0; padding: 1.5rem; list-style: none; background: #081b23; } .ds-pasos::before { content: ''; position: absolute; top: calc(1.5rem + 9px); left: calc(1.5rem + 9px); right: 1.5rem; height: 4px; border-radius: 2px; background: linear-gradient(90deg, #0aa3d3 85%, transparent); } .ds-pasos li { position: relative; display: grid; gap: 0.6rem; } .ds-nodo { width: 22px; height: 22px; margin-bottom: 1rem; border: 4px solid #0aa3d3; border-radius: 50%; background: #081b23; box-sizing: border-box; } .ds-pasos li:last-child .ds-nodo { border-color: #ffb020; } .ds-numero { font-family: Quicksand, system-ui, sans-serif; font-weight: 700; font-size: 3rem; line-height: 1; color: #5acfff; } .ds-pasos h3 { margin: 0; font-family: Quicksand, system-ui, sans-serif; font-weight: 700; font-size: 1.1rem; color: #ffffff; }"
+    },
+    {
+      "name": "WhatsApp flotante",
+      "kind": "button",
+      "refersTo": "whatsapp-flotante",
+      "description": "Pastilla ámbar que flota solo en celular cuando el botón del hero sale de pantalla.",
+      "html": "<a class=\"ds-flotante\" href=\"#\"><svg viewBox=\"0 0 24 24\" width=\"24\" height=\"24\" fill=\"currentColor\" aria-hidden=\"true\"><path d=\"M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z\"/></svg>WhatsApp</a>",
+      "css": ".ds-flotante { display: inline-flex; align-items: center; gap: 0.5rem; min-height: 3.25rem; padding: 0 1.15rem 0 1rem; border-radius: 999px; background: #ffb020; color: #00212f; font-family: Quicksand, system-ui, sans-serif; font-weight: 700; font-size: 1rem; line-height: 1; text-decoration: none; box-shadow: 0 6px 20px rgb(0 0 0 / 0.35); transition: background-color 0.15s; } .ds-flotante:hover { background: #ffc762; } .ds-flotante:focus-visible { outline: 3px solid #5acfff; outline-offset: 3px; } .ds-flotante svg { width: 24px; height: 24px; flex: none; }"
+    }
+  ],
+  "narrative": {
+    "northStar": "La placa a la vista",
+    "overview": "Fixtris se ve como un equipo abierto sobre la mesa del técnico: fondo oscuro de placa, pistas azules que conectan las partes, bloques que encajan en una grilla exacta y una sola pieza ámbar, la que arregla. Todo sale del logo, que es un chip con una pieza en T que cae para completar la línea. El sitio repite esa idea en el damero de servicios, en la pista de circuito que une los pasos, en el punto en bloque del título y en el minijuego del hero.\n\nEl carácter es **lúdico y preciso, cercano y directo, nocturno y técnico, claro y honesto**. Lo lúdico vive en los detalles: la pieza que se puede encajar, el bloque al final del título. La precisión la pone la grilla. Lo nocturno es el estado por defecto, y los tramos claros (servicios, preguntas) son como abrir la tapa y prender la luz para leer con calma. La honestidad es visual: los precios se leen de un vistazo, en la misma línea que el servicio, sin letra chica ni efectos que distraigan.\n\nLa densidad es media y pensada para el pulgar. El sitio se lee sobre todo en celulares de 360 a 412 px, así que cada patrón de escritorio tiene su versión de una columna resuelta a propósito, no solo apilada.",
+    "keyCharacteristics": [
+      "Oscuro por defecto (`color-scheme: dark`), con dos secciones claras que marcan el ritmo.",
+      "Un azul de marca con su escala completa y un ámbar reservado para actuar.",
+      "Grilla de 6 columnas en la que cada fila se completa, como una línea del juego.",
+      "Plano: la profundidad sale del cambio de tono, no de sombras.",
+      "Quicksand redondeada en títulos, botones y montos; system-ui en el texto corrido.",
+      "Íconos de librería, todos de 24 px."
+    ],
+    "rules": [
+      {
+        "name": "La Regla de la Pieza Ámbar",
+        "body": "El ámbar es la pieza que arregla: se usa solo en acciones y en la pieza del logo. No sirve para decorar ni para avisar. El aviso de compromiso, aunque importa, va con borde azul justamente para no competir con los botones.",
+        "section": "colors"
+      },
+      {
+        "name": "La Regla del Azul por Fondo",
+        "body": "Sobre la placa oscura los enlaces, el foco y los acentos van en Azul Cielo. Sobre papel van en Azul Hondo. Nunca se intercambian.",
+        "section": "colors"
+      },
+      {
+        "name": "La Regla de los Temas",
+        "body": "Cada sección declara su tema (`tema-oscuro`, `tema-oscuro tema-alt` o `tema-claro`) y los componentes toman `--fondo`, `--texto`, `--suave`, `--titulo`, `--linea` y `--enlace` de ahí. Un componente nuevo no fija colores de texto a mano.",
+        "section": "colors"
+      },
+      {
+        "name": "La Regla de los Números Redondos",
+        "body": "Precios, montos y números de paso van siempre en Quicksand 700. Son lo primero que busca el visitante y tienen que leerse como títulos.",
+        "section": "typography"
+      },
+      {
+        "name": "La Regla del Bloque Final",
+        "body": "El título del hero termina en un cuadrado de 0.17em, igual que los puntos de las íes del logo. Es un detalle de firma: no se repite en cada título.",
+        "section": "typography"
+      },
+      {
+        "name": "La Regla de la Línea Completa",
+        "body": "En la grilla de servicios cada fila suma 6 columnas, como una línea del juego que se limpia. Un servicio nuevo se suma revisando los anchos de su fila.",
+        "section": "layout"
+      },
+      {
+        "name": "La Regla del Pulgar",
+        "body": "Todo lo que se toca mide al menos 3rem de alto (3.5rem en el menú y los botones del hero en celular, 4rem en los enlaces del menú) y deja el espacio del área segura del teléfono.",
+        "section": "layout"
+      },
+      {
+        "name": "La Regla Plana",
+        "body": "Las superficies son planas en reposo y en hover. La sombra queda para lo que flota sobre la página mientras se hace scroll. Una tarjeta nueva se separa del fondo subiendo un escalón de placa o con un borde, nunca con una sombra.",
+        "section": "elevation"
+      },
+      {
+        "name": "La Regla de la Junta",
+        "body": "Donde las piezas se tocan, la separación es una junta fija de 6 px sobre Azul Noche, no un `gap` de aire. Así el damero se lee como un solo bloque armado.",
+        "section": "shapes"
+      }
+    ],
+    "dos": [
+      "**Do** reservar Ámbar Pieza para acciones y para la pieza del logo, con Azul Noche como color de texto encima.",
+      "**Do** declarar el tema de cada sección nueva (`tema-oscuro`, `tema-alt` o `tema-claro`) y respetar la alternancia de oscuros y claros de la página.",
+      "**Do** completar cada fila de la grilla de servicios hasta 6 columnas.",
+      "**Do** separar las superficies subiendo un escalón de placa (Base, Alt, Tarjeta) o con un borde de 1 px en Placa Borde.",
+      "**Do** poner precios, montos y números en Quicksand 700.",
+      "**Do** usar íconos de Heroicons o Simple Icons a 24 px, a través del componente de íconos.",
+      "**Do** diseñar primero para 360–412 px: una columna, botones de ancho completo y mismo alto, y la acción antes que la información secundaria.",
+      "**Do** respetar `prefers-reduced-motion`: las transiciones y animaciones se anulan y el scroll deja de ser suave."
+    ],
+    "donts": [
+      "**Don't** usar el ámbar para avisos, etiquetas, decoración o fondos grandes.",
+      "**Don't** agregar sombras a tarjetas, piezas o botones en reposo o en hover. La sombra es solo para la barra fija y el botón flotante.",
+      "**Don't** dibujar íconos SVG a mano. Lo único dibujado a mano son los logos de Fixtris.",
+      "**Don't** usar radios mayores a 10 px en componentes comunes ni formas de pastilla, salvo el WhatsApp flotante.",
+      "**Don't** poner Azul Cielo sobre fondo claro ni Azul Hondo como acento sobre la placa oscura.",
+      "**Don't** mostrar los controles del minijuego ni capturar gestos en el celular.",
+      "**Don't** usar formularios de contacto ni selectores tipo chip. El contacto se hace con botones directos (WhatsApp, llamar, correo).",
+      "**Don't** mostrar reseñas, fotos o cifras de relleno para simular prueba social."
+    ]
+  }
+}
