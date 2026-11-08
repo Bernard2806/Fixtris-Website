@@ -10,6 +10,7 @@ target_fingerprint: "sha256:21dec4a6a2498d69f39d4f4087576c93a56eaf9030824107e085
 target_path: /mnt/GamesHDD/Desarrollo/Private-Repos/Fixtris-Website/src/pages/index.astro
 timestamp: 2026-11-08T03-56-51Z
 slug: src-pages-index-astro
+closed: true
 ---
 Method: dual-agent (A: revisión de diseño · B: detector y navegador). Escritorio 1360 px; celular 360/390 px simulado en iframe.
 
