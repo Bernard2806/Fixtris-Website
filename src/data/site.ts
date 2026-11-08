@@ -239,7 +239,6 @@ export const precios: { categoria: string; aclaracion?: string; items: Precio[] 
 	},
 	{
 		categoria: 'Recuperación de datos',
-		aclaracion: 'Si no se recuperan los datos, no se cobra.',
 		items: [
 			{
 				servicio: 'Clonado de disco',
@@ -248,7 +247,7 @@ export const precios: { categoria: string; aclaracion?: string; items: Precio[] 
 			},
 			{
 				servicio: 'Respaldo de archivos',
-				detalle: 'A un disco o pendrive que ponés vos, o en nuestra nube durante 7 días.',
+				detalle: 'A un disco o pendrive que ponés vos, o en nuestra nube durante 7 días. Si no se recuperan los datos, no se cobra.',
 				usd: 22.28, // $35.000 al MEP de $1.570,87 (02/11/2026)
 			},
 		],
